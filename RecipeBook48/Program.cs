@@ -16,7 +16,19 @@ namespace RecipeBook48
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormWelcome());
+
+            //wczytanie ustawień
+
+            //połączenie z bazą danych
+
+            //doopiero wtedy start
+            MetroFramework.Components.MetroStyleManager manager = new MetroFramework.Components.MetroStyleManager();
+            manager.Theme = MetroFramework.MetroThemeStyle.Dark;
+            manager.Style = MetroFramework.MetroColorStyle.Lime;
+
+            FormWelcome fw = new FormWelcome(manager);
+
+            Application.Run(fw);
         }
     }
 }

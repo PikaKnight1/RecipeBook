@@ -1,4 +1,6 @@
-﻿namespace RecipeBook48
+﻿using MetroFramework.Components;
+
+namespace RecipeBook48
 {
     partial class FormWelcome
     {
@@ -28,12 +30,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWelcome));
             this.DateTimeCurrent = new MetroFramework.Controls.MetroDateTime();
             this.TileSetUp = new MetroFramework.Controls.MetroTile();
             this.TileRandomRecipe = new MetroFramework.Controls.MetroTile();
             this.TileAddRecipe = new MetroFramework.Controls.MetroTile();
             this.TileRecipeList = new MetroFramework.Controls.MetroTile();
+            this.styleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.styleManager)).BeginInit();
             this.SuspendLayout();
             // 
             // DateTimeCurrent
@@ -59,7 +64,7 @@
             this.TileSetUp.Size = new System.Drawing.Size(300, 150);
             this.TileSetUp.TabIndex = 4;
             this.TileSetUp.Text = "Ustawienia";
-            this.TileSetUp.TileImage = global::RecipeBook48.Properties.Resources.img4;
+            this.TileSetUp.TileImage = ((System.Drawing.Image)(resources.GetObject("TileSetUp.TileImage")));
             this.TileSetUp.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.TileSetUp.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.TileSetUp.UseSelectable = true;
@@ -74,7 +79,7 @@
             this.TileRandomRecipe.Size = new System.Drawing.Size(300, 150);
             this.TileRandomRecipe.TabIndex = 3;
             this.TileRandomRecipe.Text = "Losowy przepis";
-            this.TileRandomRecipe.TileImage = global::RecipeBook48.Properties.Resources.img3;
+            this.TileRandomRecipe.TileImage = ((System.Drawing.Image)(resources.GetObject("TileRandomRecipe.TileImage")));
             this.TileRandomRecipe.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.TileRandomRecipe.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.TileRandomRecipe.UseSelectable = true;
@@ -108,8 +113,13 @@
             this.TileRecipeList.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.TileRecipeList.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.TileRecipeList.UseSelectable = true;
+            this.TileRecipeList.UseStyleColors = true;
             this.TileRecipeList.UseTileImage = true;
             this.TileRecipeList.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
+            // styleManager
+            // 
+            this.styleManager.Owner = null;
             // 
             // FormWelcome
             // 
@@ -125,16 +135,29 @@
             this.Name = "FormWelcome";
             this.Text = "Przepisy - Witaj!";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.styleManager)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private void SetUpStyle(MetroStyleManager manago)
+        {
+            this.StyleManager = manago;
+            this.styleManager = manago;
+            this.TileRandomRecipe.StyleManager = styleManager;
+            this.TileAddRecipe.StyleManager = styleManager;
+            this.TileSetUp.StyleManager = styleManager;
+            this.TileRecipeList.StyleManager = styleManager;
+            this.DateTimeCurrent.StyleManager = styleManager;
+        }
+
         private MetroFramework.Controls.MetroTile TileRecipeList;
         private MetroFramework.Controls.MetroTile TileAddRecipe;
         private MetroFramework.Controls.MetroTile TileRandomRecipe;
         private MetroFramework.Controls.MetroTile TileSetUp;
         private MetroFramework.Controls.MetroDateTime DateTimeCurrent;
+        private MetroFramework.Components.MetroStyleManager styleManager;
     }
 }

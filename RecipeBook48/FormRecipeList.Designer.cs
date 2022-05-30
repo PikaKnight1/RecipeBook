@@ -1,4 +1,6 @@
-﻿namespace RecipeBook48
+﻿using MetroFramework.Components;
+
+namespace RecipeBook48
 {
     partial class FormMainMenu
     {
@@ -29,7 +31,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.styleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.PanelLeft = new MetroFramework.Controls.MetroPanel();
             this.PanelCategories = new MetroFramework.Controls.MetroPanel();
             this.RadioCatOthers = new MetroFramework.Controls.MetroRadioButton();
@@ -62,20 +63,15 @@
             this.TextBoxSearch = new MetroFramework.Controls.MetroTextBox();
             this.ButtonSearch = new MetroFramework.Controls.MetroButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.styleManager)).BeginInit();
+            this.styleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.PanelLeft.SuspendLayout();
             this.PanelCategories.SuspendLayout();
             this.PanelTime.SuspendLayout();
             this.PanelDifficulty.SuspendLayout();
             this.PanelSort.SuspendLayout();
             this.PanelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.styleManager)).BeginInit();
             this.SuspendLayout();
-            // 
-            // styleManager
-            // 
-            this.styleManager.Owner = null;
-            this.styleManager.Style = MetroFramework.MetroColorStyle.Silver;
-            this.styleManager.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // PanelLeft
             // 
@@ -460,6 +456,10 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(811, 483);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
+            // styleManager
+            // 
+            this.styleManager.Owner = null;
+            // 
             // FormMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,8 +470,8 @@
             this.Controls.Add(this.PanelLeft);
             this.Name = "FormMainMenu";
             this.Text = "Przepisy - Lista Przepisów";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainMenu_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.styleManager)).EndInit();
             this.PanelLeft.ResumeLayout(false);
             this.PanelCategories.ResumeLayout(false);
             this.PanelCategories.PerformLayout();
@@ -482,15 +482,17 @@
             this.PanelSort.ResumeLayout(false);
             this.PanelSort.PerformLayout();
             this.PanelTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.styleManager)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private void SetUpStyle()
+        private void SetUpStyle(MetroStyleManager manago)
         {
-            this.StyleManager = styleManager;
+            this.StyleManager = manago;
+            this.styleManager = manago;
             this.PanelLeft.StyleManager = styleManager;
             this.PanelCategories.StyleManager = styleManager;
             this.RadioCatOthers.StyleManager = styleManager;
@@ -522,8 +524,8 @@
             this.PanelTop.StyleManager = styleManager;
             this.TextBoxSearch.StyleManager = styleManager;
             this.ButtonSearch.StyleManager = styleManager;
-
         }
+
         private MetroFramework.Controls.MetroPanel PanelLeft;
         private MetroFramework.Controls.MetroPanel PanelSort;
         private MetroFramework.Controls.MetroRadioButton RadioSortDateOld;
@@ -556,7 +558,7 @@
         private MetroFramework.Controls.MetroRadioButton RadioCatAny;
         private MetroFramework.Controls.MetroLabel LabelCategory;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        public MetroFramework.Components.MetroStyleManager styleManager;
+        public MetroStyleManager styleManager;
     }
 }
 

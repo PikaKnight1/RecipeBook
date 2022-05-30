@@ -8,18 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using MetroFramework.Components;
 
 namespace RecipeBook48
 {
     public partial class FormWelcome : MetroForm
     {
-        public FormWelcome()
+        public FormWelcome(MetroStyleManager manager)
         {
             InitializeComponent();
-
+            SetUpStyle(manager);
         }
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -39,7 +38,9 @@ namespace RecipeBook48
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-
+            FormMainMenu form = new FormMainMenu(this.styleManager, this);
+            form.Show();
+            this.Hide();
         }
 
         private void metroTile4_Click(object sender, EventArgs e)

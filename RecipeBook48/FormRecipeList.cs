@@ -9,20 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
+using MetroFramework.Components;
+
 
 namespace RecipeBook48
 {
     public partial class FormMainMenu : MetroForm
     {
-        public FormMainMenu()
+        FormWelcome form;
+
+        public FormMainMenu(MetroStyleManager manager, FormWelcome form)
         {
             InitializeComponent();
-            SetUpStyle();
+            SetUpStyle(manager);
+
+            this.form = form;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 300; i++)
+            for (int i = 0; i < 10; i++)
             {
                 MetroButton butt = new MetroButton();
                 butt.BackgroundImage = Image.FromFile(@"C:\Users\pikak\Pictures\img.png");
@@ -37,8 +43,8 @@ namespace RecipeBook48
 
         private void Butt_Click(object sender, EventArgs e)
         {
-            FormWelcome fw = new FormWelcome();
-            fw.Show();
+            form.Show();
+            this.Close();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -57,13 +63,16 @@ namespace RecipeBook48
                 styleManager.Style = (MetroFramework.MetroColorStyle)i;
             }
             this.Refresh();
-
-                
         }
 
         private void TextBoxSearch_Click(object sender, EventArgs e)
         {
             TextBoxSearch.SelectAll();
+        }
+
+        private void FormMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form.Show();
         }
     }
 }
