@@ -28,10 +28,17 @@ namespace RecipeBook48
                 butt.BackgroundImage = Image.FromFile(@"C:\Users\pikak\Pictures\img.png");
                 butt.Size = new Size(256, 144);
                 butt.BackgroundImageLayout = ImageLayout.Stretch;
+                butt.Click += Butt_Click;
 
                 flowLayoutPanel1.Controls.Add(butt);
             }
 
+        }
+
+        private void Butt_Click(object sender, EventArgs e)
+        {
+            FormWelcome fw = new FormWelcome();
+            fw.Show();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

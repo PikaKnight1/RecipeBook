@@ -76,7 +76,6 @@
             this.styleManager.Owner = null;
             this.styleManager.Style = MetroFramework.MetroColorStyle.Silver;
             this.styleManager.Theme = MetroFramework.MetroThemeStyle.Dark;
-
             // 
             // PanelLeft
             // 
@@ -485,10 +484,6 @@
             this.PanelTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
-            //
-            // Style 
-            //
-
         }
 
         #endregion
@@ -529,8 +524,6 @@
             this.ButtonSearch.StyleManager = styleManager;
 
         }
-
-        private MetroFramework.Components.MetroStyleManager styleManager;
         private MetroFramework.Controls.MetroPanel PanelLeft;
         private MetroFramework.Controls.MetroPanel PanelSort;
         private MetroFramework.Controls.MetroRadioButton RadioSortDateOld;
@@ -563,6 +556,7 @@
         private MetroFramework.Controls.MetroRadioButton RadioCatAny;
         private MetroFramework.Controls.MetroLabel LabelCategory;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public MetroFramework.Components.MetroStyleManager styleManager;
     }
 }
 
