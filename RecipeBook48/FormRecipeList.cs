@@ -14,11 +14,11 @@ using MetroFramework.Components;
 
 namespace RecipeBook48
 {
-    public partial class FormMainMenu : MetroForm
+    public partial class FormRecipeList : MetroForm
     {
         FormWelcome form;
 
-        public FormMainMenu(MetroStyleManager manager, FormWelcome form)
+        public FormRecipeList(MetroStyleManager manager, FormWelcome form)
         {
             InitializeComponent();
             SetUpStyle(manager);

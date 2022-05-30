@@ -38,7 +38,7 @@ namespace RecipeBook48
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            FormMainMenu form = new FormMainMenu(this.styleManager, this);
+            FormRecipeList form = new FormRecipeList(this.styleManager, this);
             form.Show();
             this.Hide();
         }

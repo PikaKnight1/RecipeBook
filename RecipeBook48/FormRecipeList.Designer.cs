@@ -2,7 +2,7 @@
 
 namespace RecipeBook48
 {
-    partial class FormMainMenu
+    partial class FormRecipeList
     {
         /// <summary>
         /// Required designer variable.
@@ -460,7 +460,7 @@ namespace RecipeBook48
             // 
             this.styleManager.Owner = null;
             // 
-            // FormMainMenu
+            // FormRecipeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -468,7 +468,7 @@ namespace RecipeBook48
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.PanelTop);
             this.Controls.Add(this.PanelLeft);
-            this.Name = "FormMainMenu";
+            this.Name = "FormRecipeList";
             this.Text = "Przepisy - Lista Przepisów";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainMenu_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);

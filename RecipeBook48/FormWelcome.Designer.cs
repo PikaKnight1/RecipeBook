@@ -131,6 +131,7 @@ namespace RecipeBook48
             this.Controls.Add(this.TileRandomRecipe);
             this.Controls.Add(this.TileAddRecipe);
             this.Controls.Add(this.TileRecipeList);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "FormWelcome";
             this.Text = "Przepisy - Witaj!";
