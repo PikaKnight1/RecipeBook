@@ -423,6 +423,7 @@ namespace RecipeBook48
             // 
             // TextBoxSearch
             // 
+            this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxSearch.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBoxSearch.Lines = new string[] {
         "Tu wpisz nazwę szukanego dania..."};
@@ -440,6 +441,7 @@ namespace RecipeBook48
             // 
             // ButtonSearch
             // 
+            this.ButtonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSearch.Location = new System.Drawing.Point(665, 0);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(144, 29);

@@ -36,16 +36,35 @@ namespace RecipeBook48
 
         }
 
+
         private void metroTile1_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
+
             FormRecipeList form = new FormRecipeList(this.styleManager, this);
+
             form.Show();
             this.Hide();
+
+            this.Cursor = Cursors.Default;
         }
 
         private void metroTile4_Click(object sender, EventArgs e)
         {
+            FormRecipeView frw = new FormRecipeView(this.styleManager, this);
+            frw.Show();
+        }
 
+        private void TileSetUp_Click(object sender, EventArgs e)
+        {
+            FormSettings form = new FormSettings(this.styleManager, this);
+            form.Show();
+            this.Hide();
+        }
+
+        private void FormWelcome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        
         }
     }
 }

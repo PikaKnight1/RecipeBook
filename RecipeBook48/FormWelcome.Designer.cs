@@ -33,11 +33,11 @@ namespace RecipeBook48
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWelcome));
             this.DateTimeCurrent = new MetroFramework.Controls.MetroDateTime();
+            this.styleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.TileSetUp = new MetroFramework.Controls.MetroTile();
             this.TileRandomRecipe = new MetroFramework.Controls.MetroTile();
             this.TileAddRecipe = new MetroFramework.Controls.MetroTile();
             this.TileRecipeList = new MetroFramework.Controls.MetroTile();
-            this.styleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +56,10 @@ namespace RecipeBook48
             this.DateTimeCurrent.Size = new System.Drawing.Size(274, 35);
             this.DateTimeCurrent.TabIndex = 5;
             // 
+            // styleManager
+            // 
+            this.styleManager.Owner = null;
+            // 
             // TileSetUp
             // 
             this.TileSetUp.ActiveControl = null;
@@ -69,6 +73,7 @@ namespace RecipeBook48
             this.TileSetUp.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.TileSetUp.UseSelectable = true;
             this.TileSetUp.UseTileImage = true;
+            this.TileSetUp.Click += new System.EventHandler(this.TileSetUp_Click);
             // 
             // TileRandomRecipe
             // 
@@ -94,7 +99,7 @@ namespace RecipeBook48
             this.TileAddRecipe.Size = new System.Drawing.Size(300, 150);
             this.TileAddRecipe.TabIndex = 1;
             this.TileAddRecipe.Text = "Dodaj przepis";
-            this.TileAddRecipe.TileImage = global::RecipeBook48.Properties.Resources.img31;
+            this.TileAddRecipe.TileImage = global::RecipeBook48.Properties.Resources.img2;
             this.TileAddRecipe.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.TileAddRecipe.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.TileAddRecipe.UseSelectable = true;
@@ -117,10 +122,6 @@ namespace RecipeBook48
             this.TileRecipeList.UseTileImage = true;
             this.TileRecipeList.Click += new System.EventHandler(this.metroTile1_Click);
             // 
-            // styleManager
-            // 
-            this.styleManager.Owner = null;
-            // 
             // FormWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,6 +136,7 @@ namespace RecipeBook48
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "FormWelcome";
             this.Text = "Przepisy - Witaj!";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormWelcome_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).EndInit();
             this.ResumeLayout(false);

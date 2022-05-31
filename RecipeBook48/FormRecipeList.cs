@@ -28,13 +28,16 @@ namespace RecipeBook48
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 250; i++)
             {
-                MetroButton butt = new MetroButton();
-                butt.BackgroundImage = Image.FromFile(@"C:\Users\pikak\Pictures\img.png");
+                MetroTile butt = new MetroTile();
+                butt.Text = "aaaa";
+                butt.UseTileImage = true;
+                Image img = (Image)(new Bitmap(Image.FromFile(@"C:\Users\pikak\Pictures\img.png"), new Size(256,144)));
+                butt.TileImage = img;
                 butt.Size = new Size(256, 144);
-                butt.BackgroundImageLayout = ImageLayout.Stretch;
                 butt.Click += Butt_Click;
+                butt.StyleManager = styleManager;
 
                 flowLayoutPanel1.Controls.Add(butt);
             }
