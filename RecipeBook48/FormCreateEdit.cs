@@ -14,9 +14,13 @@ namespace RecipeBook48
 {
     public partial class FormCreateEdit : MetroForm
     {
-        public FormCreateEdit()
+        FormWelcome form;
+        public FormCreateEdit(MetroStyleManager manager, FormWelcome form)
         {
             InitializeComponent();
+            SetUpStyle(manager);
+
+            this.form = form;
         }
 
         private void FormCreateEdit_Load(object sender, EventArgs e)
@@ -28,28 +32,28 @@ namespace RecipeBook48
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            metroGrid1.Rows.Add(metroTextBox5.Text, metroTextBox4.Text, getSelectedItem());
+            GridIng.Rows.Add(metroTextBox5.Text, metroTextBox4.Text, getSelectedItem());
         }
 
         private string getSelectedItem()
         {
-            if (metroRadioButton4.Checked) return metroRadioButton4.Text;
-            if (metroRadioButton5.Checked) return metroRadioButton5.Text;
-            if (metroRadioButton6.Checked) return metroRadioButton6.Text;
-            if (metroRadioButton7.Checked) return metroRadioButton7.Text;
-            if (metroRadioButton8.Checked) return metroRadioButton8.Text;
-            if (metroRadioButton9.Checked) return metroRadioButton9.Text;
-            if (metroRadioButton10.Checked) return metroRadioButton10.Text;
-            if (metroRadioButton11.Checked) return metroRadioButton11.Text;
+            if (RadioBtnTypeG.Checked) return RadioBtnTypeG.Text;
+            if (RadioBtnTypeKG.Checked) return RadioBtnTypeKG.Text;
+            if (RadioBtnTypeML.Checked) return RadioBtnTypeML.Text;
+            if (RadioBtnTypeL.Checked) return RadioBtnTypeL.Text;
+            if (RadioBtnTypeSZKL.Checked) return RadioBtnTypeSZKL.Text;
+            if (RadioBtnTypeLYZ.Checked) return RadioBtnTypeLYZ.Text;
+            if (RadioBtnTypeSZCZ.Checked) return RadioBtnTypeSZCZ.Text;
+            if (RadioBtnTypeSZT.Checked) return RadioBtnTypeSZT.Text;
 
             return "nie zaznaczono jednostkki";
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            metroGrid1.ReadOnly = false;
+            GridIng.ReadOnly = false;
 
-            metroGrid1.SelectedRows.Clear();
+            GridIng.SelectedRows.Clear();
         }
 
         private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)

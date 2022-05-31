@@ -561,6 +561,7 @@ namespace RecipeBook48
         private MetroFramework.Controls.MetroLabel LabelCategory;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public MetroStyleManager styleManager;
+
     }
 }
 
