@@ -57,6 +57,8 @@ namespace RecipeBook48
             this.ButtonSQLSave = new MetroFramework.Controls.MetroButton();
             this.ButtonCancel = new MetroFramework.Controls.MetroButton();
             this.ButtonUsernameSave = new MetroFramework.Controls.MetroButton();
+            this.TextBoxUserPassword = new MetroFramework.Controls.MetroTextBox();
+            this.LabelUserPassword = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -347,18 +349,44 @@ namespace RecipeBook48
             // 
             // ButtonUsernameSave
             // 
-            this.ButtonUsernameSave.Location = new System.Drawing.Point(256, 393);
+            this.ButtonUsernameSave.Location = new System.Drawing.Point(256, 426);
             this.ButtonUsernameSave.Name = "ButtonUsernameSave";
             this.ButtonUsernameSave.Size = new System.Drawing.Size(101, 28);
             this.ButtonUsernameSave.TabIndex = 24;
             this.ButtonUsernameSave.Text = "Zapisz";
             this.ButtonUsernameSave.UseSelectable = true;
             // 
-            // FormSettingss
+            // TextBoxUserPassword
+            // 
+            this.TextBoxUserPassword.Lines = new string[] {
+        "metroTextBox6"};
+            this.TextBoxUserPassword.Location = new System.Drawing.Point(163, 393);
+            this.TextBoxUserPassword.MaxLength = 32767;
+            this.TextBoxUserPassword.Name = "TextBoxUserPassword";
+            this.TextBoxUserPassword.PasswordChar = '\0';
+            this.TextBoxUserPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextBoxUserPassword.SelectedText = "";
+            this.TextBoxUserPassword.Size = new System.Drawing.Size(194, 23);
+            this.TextBoxUserPassword.TabIndex = 26;
+            this.TextBoxUserPassword.Text = "metroTextBox6";
+            this.TextBoxUserPassword.UseSelectable = true;
+            // 
+            // LabelUserPassword
+            // 
+            this.LabelUserPassword.AutoSize = true;
+            this.LabelUserPassword.Location = new System.Drawing.Point(23, 393);
+            this.LabelUserPassword.Name = "LabelUserPassword";
+            this.LabelUserPassword.Size = new System.Drawing.Size(44, 19);
+            this.LabelUserPassword.TabIndex = 25;
+            this.LabelUserPassword.Text = "Hasło:";
+            // 
+            // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.TextBoxUserPassword);
+            this.Controls.Add(this.LabelUserPassword);
             this.Controls.Add(this.ButtonUsernameSave);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonSQLSave);
@@ -386,7 +414,7 @@ namespace RecipeBook48
             this.Controls.Add(this.LabelSQLSettings);
             this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
-            this.Name = "FormSettingss";
+            this.Name = "FormSettings";
             this.Text = "Ustawienia";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSettingss_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -448,6 +476,8 @@ namespace RecipeBook48
             this.ButtonCancel.StyleManager = styleManager;
             this.ButtonSQLSave.StyleManager = styleManager;
             this.ButtonThemeAccept.StyleManager = styleManager;
+            this.TextBoxUserPassword.StyleManager = styleManager;
+            this.LabelUserPassword.StyleManager = styleManager;
             
         }
 
@@ -456,5 +486,7 @@ namespace RecipeBook48
         private MetroFramework.Controls.MetroButton ButtonSQLSave;
         private MetroFramework.Controls.MetroButton ButtonCancel;
         private MetroFramework.Controls.MetroButton ButtonUsernameSave;
+        private MetroFramework.Controls.MetroTextBox TextBoxUserPassword;
+        private MetroFramework.Controls.MetroLabel LabelUserPassword;
     }
 }

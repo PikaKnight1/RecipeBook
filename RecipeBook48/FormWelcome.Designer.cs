@@ -104,6 +104,7 @@ namespace RecipeBook48
             this.TileAddRecipe.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.TileAddRecipe.UseSelectable = true;
             this.TileAddRecipe.UseTileImage = true;
+            this.TileAddRecipe.Click += new System.EventHandler(this.TileAddRecipe_Click);
             // 
             // TileRecipeList
             // 

@@ -66,5 +66,11 @@ namespace RecipeBook48
         {
         
         }
+
+        private void TileAddRecipe_Click(object sender, EventArgs e)
+        {
+            FormCreateEdit form = new FormCreateEdit();
+            form.Show();
+        }
     }
 }

@@ -37,7 +37,6 @@ namespace RecipeBook48
             this.LabelTime = new MetroFramework.Controls.MetroLabel();
             this.LabelDifficultyText = new MetroFramework.Controls.MetroLabel();
             this.LabelDifficulty = new MetroFramework.Controls.MetroLabel();
-            this.PictureRecipe = new System.Windows.Forms.PictureBox();
             this.PanelTopLeft = new MetroFramework.Controls.MetroPanel();
             this.LabelCategoryText = new MetroFramework.Controls.MetroLabel();
             this.LabelCategory = new MetroFramework.Controls.MetroLabel();
@@ -50,13 +49,14 @@ namespace RecipeBook48
             this.PanelMaking = new MetroFramework.Controls.MetroPanel();
             this.TextBoxMaking = new MetroFramework.Controls.MetroTextBox();
             this.styleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.PictureRecipe = new System.Windows.Forms.PictureBox();
             this.PanelTop.SuspendLayout();
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureRecipe)).BeginInit();
             this.PanelTopLeft.SuspendLayout();
             this.PanelIngredients.SuspendLayout();
             this.PanelMaking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureRecipe)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelTop
@@ -131,15 +131,6 @@ namespace RecipeBook48
             this.LabelDifficulty.Size = new System.Drawing.Size(113, 19);
             this.LabelDifficulty.TabIndex = 3;
             this.LabelDifficulty.Text = "Poziom trudności:";
-            // 
-            // PictureRecipe
-            // 
-            this.PictureRecipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureRecipe.Location = new System.Drawing.Point(393, 3);
-            this.PictureRecipe.Name = "PictureRecipe";
-            this.PictureRecipe.Size = new System.Drawing.Size(182, 102);
-            this.PictureRecipe.TabIndex = 3;
-            this.PictureRecipe.TabStop = false;
             // 
             // PanelTopLeft
             // 
@@ -281,6 +272,15 @@ namespace RecipeBook48
             // 
             this.styleManager.Owner = null;
             // 
+            // PictureRecipe
+            // 
+            this.PictureRecipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureRecipe.Location = new System.Drawing.Point(393, 3);
+            this.PictureRecipe.Name = "PictureRecipe";
+            this.PictureRecipe.Size = new System.Drawing.Size(182, 102);
+            this.PictureRecipe.TabIndex = 3;
+            this.PictureRecipe.TabStop = false;
+            // 
             // FormRecipeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,12 +298,12 @@ namespace RecipeBook48
             this.PanelTop.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureRecipe)).EndInit();
             this.PanelTopLeft.ResumeLayout(false);
             this.PanelTopLeft.PerformLayout();
             this.PanelIngredients.ResumeLayout(false);
             this.PanelMaking.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureRecipe)).EndInit();
             this.ResumeLayout(false);
 
         }
