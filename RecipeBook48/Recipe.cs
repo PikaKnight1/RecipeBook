@@ -42,7 +42,7 @@ namespace RecipeBook48
 
             for (int i = 0; i < 30; i++)
             {
-                Recipe recipe = new Recipe(i, "Przepis {i}", @"https://polpharma.pl/wp-content/uploads/2019/08/cookies.jpg", Difficulty.EASY, 60, "pika");
+                Recipe recipe = new Recipe(i, "Przepis {i}", @"https://zjedzciastko.pl/wp-content/uploads/2019/01/ciastka_z_maslem_orzechowym-750x497.jpg", Difficulty.EASY, 60, "pika");
                 recipes.Add(recipe);
             }
 

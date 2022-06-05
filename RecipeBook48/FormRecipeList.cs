@@ -13,6 +13,7 @@ using MetroFramework.Components;
 using System.Net;
 using System.IO;
 
+
 namespace RecipeBook48
 {
     public partial class FormRecipeList : MetroForm
@@ -24,56 +25,38 @@ namespace RecipeBook48
         {
             InitializeComponent();
             SetUpStyle(manager);
-
             this.form = form;
         }
-
-        bool wrongURL()
-        {
-            return true;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void ThisFormLoad(object sender, EventArgs e)
         {
             List<Recipe> recipes = Recipe.LoadTopRecipes();
             
-
             foreach (var recipe in recipes)
             {
-                Image image = Image.Load
+
                 MetroTile tile = new MetroTile();
                 tile.Text = recipe.RecipeName;
                 tile.UseTileImage = true;
-                WebClient web = new WebClient();
-
-                var webImage = web.DownloadData(recipe.RecipeImageURL);
-                var streamImage = new MemoryStream(webImage);
-                var downloadedImage = Bitmap.FromStream(streamImage);
-                var image = (Image)new Bitmap(downloadedImage, new Size(256,144));
-
-                // Image image = (Image)bmpImage;
-
-                //    Image.FromStream(streamImage);
-                // Image image = (Image)(new Bitmap(Image.FromFile(recipe.RecipeImageURL), new Size(256, 144)));
-
-                tile.TileImage = downloadedImage;
-                tile.Click += ButtonClick;
+                tile.Click += ButtonRecipeClick;
                 tile.StyleManager = styleManager;
+                tile.Size = tileSize;
+                tile.TileImage = RecipeImages.LoadImageFromURL(recipe.RecipeImageURL, tileSize);
+                
+                MainPanel.Controls.Add(tile);
 
-                flowLayoutPanel1.Controls.Add(tile);
-
-                flowLayoutPanel1.Refresh();
+                MainPanel.Refresh();
             }
         }
 
-        private void ButtonClick(object sender, EventArgs e)
+        private void ButtonRecipeClick(object sender, EventArgs e)
         {
             form.Show();
             this.Close();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void ButtonRandomClick(object sender, EventArgs e)
         {
+
             Random random = new Random();
             int i = random.Next(0, 14);
 
@@ -90,14 +73,19 @@ namespace RecipeBook48
             this.Refresh();
         }
 
-        private void TextBoxSearch_Click(object sender, EventArgs e)
+        private void TextBoxSearchClick(object sender, EventArgs e)
         {
             TextBoxSearch.SelectAll();
         }
 
-        private void FormMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        private void ThisFormClosing(object sender, FormClosingEventArgs e)
         {
             form.Show();
+        }
+
+        private void ButtonSortClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,6 +32,7 @@ namespace RecipeBook48
         {
             this.components = new System.ComponentModel.Container();
             this.PanelLeft = new MetroFramework.Controls.MetroPanel();
+            this.ButtonSort = new MetroFramework.Controls.MetroButton();
             this.PanelCategories = new MetroFramework.Controls.MetroPanel();
             this.RadioCatOthers = new MetroFramework.Controls.MetroRadioButton();
             this.RadioCatCakes = new MetroFramework.Controls.MetroRadioButton();
@@ -62,7 +63,7 @@ namespace RecipeBook48
             this.PanelTop = new MetroFramework.Controls.MetroPanel();
             this.TextBoxSearch = new MetroFramework.Controls.MetroTextBox();
             this.ButtonSearch = new MetroFramework.Controls.MetroButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.MainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.styleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.PanelLeft.SuspendLayout();
             this.PanelCategories.SuspendLayout();
@@ -75,11 +76,11 @@ namespace RecipeBook48
             // 
             // PanelLeft
             // 
+            this.PanelLeft.Controls.Add(this.ButtonSort);
             this.PanelLeft.Controls.Add(this.PanelCategories);
             this.PanelLeft.Controls.Add(this.PanelTime);
             this.PanelLeft.Controls.Add(this.PanelDifficulty);
             this.PanelLeft.Controls.Add(this.PanelSort);
-            this.PanelLeft.Controls.Add(this.ButtonRandomRecipe);
             this.PanelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelLeft.HorizontalScrollbarBarColor = true;
             this.PanelLeft.HorizontalScrollbarHighlightOnWheel = false;
@@ -91,6 +92,17 @@ namespace RecipeBook48
             this.PanelLeft.VerticalScrollbarBarColor = true;
             this.PanelLeft.VerticalScrollbarHighlightOnWheel = false;
             this.PanelLeft.VerticalScrollbarSize = 10;
+            // 
+            // ButtonSort
+            // 
+            this.ButtonSort.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ButtonSort.Location = new System.Drawing.Point(0, 491);
+            this.ButtonSort.Name = "ButtonSort";
+            this.ButtonSort.Size = new System.Drawing.Size(149, 29);
+            this.ButtonSort.TabIndex = 6;
+            this.ButtonSort.Text = "Zastosuj filtry / sortowanie";
+            this.ButtonSort.UseSelectable = true;
+            this.ButtonSort.Click += new System.EventHandler(this.ButtonSortClick);
             // 
             // PanelCategories
             // 
@@ -105,7 +117,7 @@ namespace RecipeBook48
             this.PanelCategories.HorizontalScrollbarBarColor = true;
             this.PanelCategories.HorizontalScrollbarHighlightOnWheel = false;
             this.PanelCategories.HorizontalScrollbarSize = 10;
-            this.PanelCategories.Location = new System.Drawing.Point(0, 359);
+            this.PanelCategories.Location = new System.Drawing.Point(0, 330);
             this.PanelCategories.Name = "PanelCategories";
             this.PanelCategories.Size = new System.Drawing.Size(149, 146);
             this.PanelCategories.TabIndex = 5;
@@ -195,7 +207,7 @@ namespace RecipeBook48
             this.PanelTime.HorizontalScrollbarBarColor = true;
             this.PanelTime.HorizontalScrollbarHighlightOnWheel = false;
             this.PanelTime.HorizontalScrollbarSize = 10;
-            this.PanelTime.Location = new System.Drawing.Point(0, 249);
+            this.PanelTime.Location = new System.Drawing.Point(0, 220);
             this.PanelTime.Name = "PanelTime";
             this.PanelTime.Size = new System.Drawing.Size(149, 110);
             this.PanelTime.TabIndex = 4;
@@ -265,7 +277,7 @@ namespace RecipeBook48
             this.PanelDifficulty.HorizontalScrollbarBarColor = true;
             this.PanelDifficulty.HorizontalScrollbarHighlightOnWheel = false;
             this.PanelDifficulty.HorizontalScrollbarSize = 10;
-            this.PanelDifficulty.Location = new System.Drawing.Point(0, 139);
+            this.PanelDifficulty.Location = new System.Drawing.Point(0, 110);
             this.PanelDifficulty.Name = "PanelDifficulty";
             this.PanelDifficulty.Size = new System.Drawing.Size(149, 110);
             this.PanelDifficulty.TabIndex = 3;
@@ -335,7 +347,7 @@ namespace RecipeBook48
             this.PanelSort.HorizontalScrollbarBarColor = true;
             this.PanelSort.HorizontalScrollbarHighlightOnWheel = false;
             this.PanelSort.HorizontalScrollbarSize = 10;
-            this.PanelSort.Location = new System.Drawing.Point(0, 29);
+            this.PanelSort.Location = new System.Drawing.Point(0, 0);
             this.PanelSort.Name = "PanelSort";
             this.PanelSort.Size = new System.Drawing.Size(149, 110);
             this.PanelSort.TabIndex = 2;
@@ -396,17 +408,17 @@ namespace RecipeBook48
             // 
             // ButtonRandomRecipe
             // 
-            this.ButtonRandomRecipe.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonRandomRecipe.Location = new System.Drawing.Point(0, 0);
             this.ButtonRandomRecipe.Name = "ButtonRandomRecipe";
             this.ButtonRandomRecipe.Size = new System.Drawing.Size(149, 29);
             this.ButtonRandomRecipe.TabIndex = 1;
             this.ButtonRandomRecipe.Text = "Wylosuj coś dla mnie!";
             this.ButtonRandomRecipe.UseSelectable = true;
-            this.ButtonRandomRecipe.Click += new System.EventHandler(this.metroButton1_Click);
+            this.ButtonRandomRecipe.Click += new System.EventHandler(this.ButtonRandomClick);
             // 
             // PanelTop
             // 
+            this.PanelTop.Controls.Add(this.ButtonRandomRecipe);
             this.PanelTop.Controls.Add(this.TextBoxSearch);
             this.PanelTop.Controls.Add(this.ButtonSearch);
             this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -437,7 +449,7 @@ namespace RecipeBook48
             this.TextBoxSearch.TabIndex = 2;
             this.TextBoxSearch.Text = "Tu wpisz nazwę szukanego dania...";
             this.TextBoxSearch.UseSelectable = true;
-            this.TextBoxSearch.Click += new System.EventHandler(this.TextBoxSearch_Click);
+            this.TextBoxSearch.Click += new System.EventHandler(this.TextBoxSearchClick);
             // 
             // ButtonSearch
             // 
@@ -449,14 +461,14 @@ namespace RecipeBook48
             this.ButtonSearch.Text = "Szukaj";
             this.ButtonSearch.UseSelectable = true;
             // 
-            // flowLayoutPanel1
+            // MainPanel
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(169, 97);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(811, 483);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.MainPanel.AutoScroll = true;
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(169, 97);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(811, 483);
+            this.MainPanel.TabIndex = 3;
             // 
             // styleManager
             // 
@@ -467,13 +479,13 @@ namespace RecipeBook48
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.PanelTop);
             this.Controls.Add(this.PanelLeft);
             this.Name = "FormRecipeList";
             this.Text = "Przepisy - Lista Przepisów";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainMenu_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ThisFormClosing);
+            this.Load += new System.EventHandler(this.ThisFormLoad);
             this.PanelLeft.ResumeLayout(false);
             this.PanelCategories.ResumeLayout(false);
             this.PanelCategories.PerformLayout();
@@ -526,6 +538,7 @@ namespace RecipeBook48
             this.PanelTop.StyleManager = styleManager;
             this.TextBoxSearch.StyleManager = styleManager;
             this.ButtonSearch.StyleManager = styleManager;
+            this.ButtonSort.StyleManager = styleManager;
         }
 
         private MetroFramework.Controls.MetroPanel PanelLeft;
@@ -559,9 +572,9 @@ namespace RecipeBook48
         private MetroFramework.Controls.MetroRadioButton RadioCatDinner;
         private MetroFramework.Controls.MetroRadioButton RadioCatAny;
         private MetroFramework.Controls.MetroLabel LabelCategory;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel MainPanel;
         public MetroStyleManager styleManager;
-
+        private MetroFramework.Controls.MetroButton ButtonSort;
     }
 }
 
