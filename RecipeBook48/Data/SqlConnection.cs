@@ -33,5 +33,22 @@ namespace RecipeBook48
             this.Password = password;
             this.Sid = sid;
         }
+
+        public bool TestSqlConnection()
+        {
+            string sql = $"data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = {this.Host})(PORT = {this.Port})))(CONNECT_DATA =(SERVICE_NAME = {this.Sid})));USER ID={this.User};PASSWORD={this.Password}";
+            OracleConnection connection = new OracleConnection(sql);
+            try
+            {
+                connection.Open();
+                connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

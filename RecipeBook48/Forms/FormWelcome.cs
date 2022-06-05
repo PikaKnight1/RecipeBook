@@ -9,26 +9,31 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MetroFramework.Components;
+using MetroFramework;
 
 namespace RecipeBook48
 {
     public partial class FormWelcome : MetroForm
     {
-        public SqlConnection connection;
+        internal SqlConnection connection;
         public FormWelcome(MetroStyleManager manager)
         {
             InitializeComponent();
             SetUpStyle(manager);
 
             JsonSerializing.ReadSqlSettings(ref connection);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-              //todo
+             if(!connection.TestSqlConnection())
+            {
+                MetroMessageBox.Show(this, "Wystąpił błąd podczas łączenia z bazą! Sprawdź ustawienia.", "Test połączenia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void metroTile1_Click(object sender, EventArgs e)
+        private void TileRecipeListClick(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
 
@@ -40,20 +45,20 @@ namespace RecipeBook48
             this.Cursor = Cursors.Default;
         }
 
-        private void metroTile4_Click(object sender, EventArgs e)
+        private void TileRandomRecipeClick(object sender, EventArgs e)
         {
             FormRecipeView frw = new FormRecipeView(this.styleManager, this, new Recipe());
             frw.Show();
         }
 
-        private void TileSetUp_Click(object sender, EventArgs e)
+        private void TileSetUpClick(object sender, EventArgs e)
         {
             FormSettings form = new FormSettings(this.styleManager, this);
             form.Show();
             this.Hide();
         }
 
-        private void TileAddRecipe_Click(object sender, EventArgs e)
+        private void TileAddRecipeClick(object sender, EventArgs e)
         {
             FormCreateEdit form = new FormCreateEdit(this.styleManager, this);
             form.Show();

@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Components;
 using MetroFramework.Forms;
+using MetroFramework;
 
 
 namespace RecipeBook48
 {
     public partial class FormSettings : MetroForm
     {
-        FormWelcome form;
+        readonly FormWelcome form;
 
         public FormSettings(MetroStyleManager manager, FormWelcome form)
         {
@@ -34,7 +35,10 @@ namespace RecipeBook48
                 TextBoxPort.Text = form.connection.Port;
                 TextBoxSID.Text = form.connection.Sid;
             }
-            catch { }
+            catch
+            {
+                //ignore when config file is empty
+            }
         }
 
         private void TextBoxIP_Click(object sender, EventArgs e)
@@ -54,6 +58,8 @@ namespace RecipeBook48
                 styleManager.Theme = (MetroFramework.MetroThemeStyle)ComboTheme.SelectedIndex + 1;
                 styleManager.Style = (MetroFramework.MetroColorStyle)ComboColor.SelectedIndex + 1;
                 this.Refresh();
+
+                JsonSerializing.ThemeSettingsToFile((int)styleManager.Theme, (int)styleManager.Style);
             }
             else
             {
@@ -88,10 +94,19 @@ namespace RecipeBook48
 
         private void ButtonSqlTestClick(object sender, EventArgs e)
         {
+            form.connection = new SqlConnection(TextBoxIP.Text, TextBoxPort.Text, TextBoxUsername.Text, TextBoxPass.Text, TextBoxSID.Text);
 
+            if (form.connection.TestSqlConnection())
+            {
+                MetroMessageBox.Show(this, "Połączenie działa poprawnie", "Test połączenia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Wystąpił błąd! Sprawdź ustawienia.", "Test połączenia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void ButtonSQLSave_Click(object sender, EventArgs e)
+        private void ButtonSQLSaveClick(object sender, EventArgs e)
         {
             form.connection = new SqlConnection(TextBoxIP.Text, TextBoxPort.Text, TextBoxUsername.Text, TextBoxPass.Text, TextBoxSID.Text);
             JsonSerializing.SqlSettingsToFile(form.connection);

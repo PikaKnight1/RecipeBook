@@ -74,7 +74,7 @@ namespace RecipeBook48
             this.TileSetUp.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.TileSetUp.UseSelectable = true;
             this.TileSetUp.UseTileImage = true;
-            this.TileSetUp.Click += new System.EventHandler(this.TileSetUp_Click);
+            this.TileSetUp.Click += new System.EventHandler(this.TileSetUpClick);
             // 
             // TileRandomRecipe
             // 
@@ -90,7 +90,7 @@ namespace RecipeBook48
             this.TileRandomRecipe.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.TileRandomRecipe.UseSelectable = true;
             this.TileRandomRecipe.UseTileImage = true;
-            this.TileRandomRecipe.Click += new System.EventHandler(this.metroTile4_Click);
+            this.TileRandomRecipe.Click += new System.EventHandler(this.TileRandomRecipeClick);
             // 
             // TileAddRecipe
             // 
@@ -105,7 +105,7 @@ namespace RecipeBook48
             this.TileAddRecipe.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.TileAddRecipe.UseSelectable = true;
             this.TileAddRecipe.UseTileImage = true;
-            this.TileAddRecipe.Click += new System.EventHandler(this.TileAddRecipe_Click);
+            this.TileAddRecipe.Click += new System.EventHandler(this.TileAddRecipeClick);
             // 
             // TileRecipeList
             // 
@@ -122,7 +122,7 @@ namespace RecipeBook48
             this.TileRecipeList.UseSelectable = true;
             this.TileRecipeList.UseStyleColors = true;
             this.TileRecipeList.UseTileImage = true;
-            this.TileRecipeList.Click += new System.EventHandler(this.metroTile1_Click);
+            this.TileRecipeList.Click += new System.EventHandler(this.TileRecipeListClick);
             // 
             // metroTile1
             // 

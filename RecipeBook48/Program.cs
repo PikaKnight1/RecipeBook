@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Components;
 
 namespace RecipeBook48
 {
@@ -18,16 +18,12 @@ namespace RecipeBook48
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //wczytanie ustawień co do wyglądu heh
+            MetroStyleManager manager = new MetroStyleManager();
+            JsonSerializing.ReadThemeSettings(ref manager);
 
-            //połączenie z bazą danych
+            FormWelcome formWelcome = new FormWelcome(manager);
 
-            //doopiero wtedy start
-            MetroFramework.Components.MetroStyleManager manager = new MetroFramework.Components.MetroStyleManager();
-
-            FormWelcome fw = new FormWelcome(manager);
-
-            Application.Run(fw);
+            Application.Run(formWelcome);
         }
     }
 }
