@@ -21,13 +21,20 @@ namespace RecipeBook48
         {
             InitializeComponent();
             SetUpStyle(manager);
-
             this.form = form;
         }
 
         private void ThisFormLoad(object sender, EventArgs e)
         {
-
+            try
+            {
+                TextBoxIP.Text = form.connection.Host;
+                TextBoxUsername.Text = form.connection.User;
+                TextBoxPass.Text = form.connection.Password;
+                TextBoxPort.Text = form.connection.Port;
+                TextBoxSID.Text = form.connection.Sid;
+            }
+            catch { }
         }
 
         private void TextBoxIP_Click(object sender, EventArgs e)
@@ -82,6 +89,12 @@ namespace RecipeBook48
         private void ButtonSqlTestClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void ButtonSQLSave_Click(object sender, EventArgs e)
+        {
+            form.connection = new SqlConnection(TextBoxIP.Text, TextBoxPort.Text, TextBoxUsername.Text, TextBoxPass.Text, TextBoxSID.Text);
+            JsonSerializing.SqlSettingsToFile(form.connection);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,14 +18,12 @@ namespace RecipeBook48
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //wczytanie ustawień
+            //wczytanie ustawień co do wyglądu heh
 
             //połączenie z bazą danych
 
             //doopiero wtedy start
             MetroFramework.Components.MetroStyleManager manager = new MetroFramework.Components.MetroStyleManager();
-            manager.Theme = MetroFramework.MetroThemeStyle.Dark;
-            manager.Style = MetroFramework.MetroColorStyle.Lime;
 
             FormWelcome fw = new FormWelcome(manager);
 

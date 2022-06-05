@@ -14,10 +14,13 @@ namespace RecipeBook48
 {
     public partial class FormWelcome : MetroForm
     {
+        public SqlConnection connection;
         public FormWelcome(MetroStyleManager manager)
         {
             InitializeComponent();
             SetUpStyle(manager);
+
+            JsonSerializing.ReadSqlSettings(ref connection);
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -278,6 +278,7 @@ namespace RecipeBook48
             this.ButtonSQLSave.TabIndex = 22;
             this.ButtonSQLSave.Text = "Zapisz";
             this.ButtonSQLSave.UseSelectable = true;
+            this.ButtonSQLSave.Click += new System.EventHandler(this.ButtonSQLSave_Click);
             // 
             // ButtonCancel
             // 
