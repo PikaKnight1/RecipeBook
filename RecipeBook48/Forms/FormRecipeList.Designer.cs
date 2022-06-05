@@ -437,8 +437,7 @@ namespace RecipeBook48
             // 
             this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxSearch.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.TextBoxSearch.Lines = new string[] {
-        "Tu wpisz nazwę szukanego dania..."};
+            this.TextBoxSearch.Lines = new string[0];
             this.TextBoxSearch.Location = new System.Drawing.Point(406, 0);
             this.TextBoxSearch.MaxLength = 32767;
             this.TextBoxSearch.Name = "TextBoxSearch";
@@ -447,7 +446,6 @@ namespace RecipeBook48
             this.TextBoxSearch.SelectedText = "";
             this.TextBoxSearch.Size = new System.Drawing.Size(253, 29);
             this.TextBoxSearch.TabIndex = 2;
-            this.TextBoxSearch.Text = "Tu wpisz nazwę szukanego dania...";
             this.TextBoxSearch.UseSelectable = true;
             this.TextBoxSearch.Click += new System.EventHandler(this.TextBoxSearchClick);
             // 

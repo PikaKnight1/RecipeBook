@@ -50,5 +50,24 @@ namespace RecipeBook48
 
             return true;
         }
+
+        public OracleConnection GetConnection()
+        {
+            string sql = $"data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = {this.Host})(PORT = {this.Port})))(CONNECT_DATA =(SERVICE_NAME = {this.Sid})));USER ID={this.User};PASSWORD={this.Password}";
+            OracleConnection connection = new OracleConnection(sql);
+            return connection;
+        }
+
+        public OracleDataReader GetReader(string sqlCommand)
+        {
+            OracleConnection connect = this.GetConnection();
+
+            connect.Open();
+            OracleCommand command = connect.CreateCommand();
+            command.CommandText = sqlCommand;
+            OracleDataReader reader = command.ExecuteReader();
+            return reader;
+        }
+
     }
 }

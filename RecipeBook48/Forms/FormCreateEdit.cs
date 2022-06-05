@@ -146,5 +146,10 @@ namespace RecipeBook48
         {
             form.Show();
         }
+
+        private void FormCreateEdit_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

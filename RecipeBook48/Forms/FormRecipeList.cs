@@ -30,7 +30,7 @@ namespace RecipeBook48
         }
         private void ThisFormLoad(object sender, EventArgs e)
         {
-            recipes = Recipe.LoadTopRecipes();
+            recipes = SqlCommands.SelectRecipesDefault(form.connection);
             
             foreach (var recipe in recipes)
             {
@@ -57,7 +57,7 @@ namespace RecipeBook48
                 if (sender is MetroTile tile)
                 {
                     var recipe = recipes.Where(i => i.RecipeID.ToString().Equals(tile.Name));
-                    FormRecipeView formRecipeView = new FormRecipeView(this.styleManager, this, recipe.Last());
+                    FormRecipeView formRecipeView = new FormRecipeView(this.styleManager, this, recipe.Last(), form.connection);
                     formRecipeView.Show();
                 }
                 this.Hide();

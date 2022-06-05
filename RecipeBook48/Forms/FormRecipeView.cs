@@ -17,51 +17,41 @@ namespace RecipeBook48
     {
         MetroForm backForm;
         Recipe recipe;
+        SqlConnection connection;
 
-        public FormRecipeView(MetroStyleManager manager, MetroForm form, Recipe recipe)
+        public FormRecipeView(MetroStyleManager manager, MetroForm form, Recipe recipe, SqlConnection connection)
         {
             InitializeComponent();
             SetUpStyle(manager);
             this.backForm = form;
             this.recipe = recipe;
+            this.connection = connection;
         }
 
         private void ThisFormLoad(object sender, EventArgs e)
         {
             LabelAuthorText.Text = this.recipe.RecipeAuthor;
             LabelCategoryText.Text = this.recipe.RecipeCategory;
-            string difficulty;
-            switch (this.recipe.RecipeDifficulty)
-            {
-                case 0:
-                    difficulty = "Łatwe";
-                    break;
-                case 1:
-                    difficulty = "Średnie";
-                    break;
-                case 2:
-                    difficulty = "Trudne";
-                    break;
-                default:
-                    difficulty = "Wystąpił błąd...";
-                   break;
-            }
-
+            string difficulty = this.recipe.RecipeDifficulty;
+            
             LabelDifficultyText.Text = difficulty;
             LabelTimeText.Text = this.recipe.RecipeTime.ToString() + " minut";
-
 
             this.Text = recipe.RecipeName;
 
             PictureRecipe.Image = RecipeImages.LoadImageFromURL(recipe.RecipeImageURL, PictureRecipe.Size);
 
+            List<string> recipeSteps = SqlCommands.SelectRecipeSteps(connection, recipe.RecipeID);
+
+            for (int i = 1; i <= recipeSteps.Count; i++)
+            {
+                TextBoxMaking.AppendText($"{i}. " + recipeSteps[i-1] + Environment.NewLine);
+            }
 
             for (int i = 0; i < 100; i++)
             {
                 TextBoxIngredients.AppendText("Siemanko, witaj w mojej aplikacji, to tylko test tekstowy yyyy tekst testowy xD");
                 TextBoxIngredients.AppendText(Environment.NewLine);
-                TextBoxMaking.AppendText("Siemanko, witaj w mojej aplikacji, to tylko test tekstowy yyyy tekst testowy xD");
-                TextBoxMaking.AppendText(Environment.NewLine);
             }
         }
 
