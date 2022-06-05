@@ -25,7 +25,7 @@ namespace RecipeBook48
             this.form = form;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ThisFormLoad(object sender, EventArgs e)
         {
 
         }
@@ -35,13 +35,12 @@ namespace RecipeBook48
             TextBoxIP.SelectAll();
         }
 
-        private void FormSettingss_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormSettingsFormClosing(object sender, FormClosingEventArgs e)
         {
             form.Show();
-
         }
 
-        private void ButtonThemeAccept_Click(object sender, EventArgs e)
+        private void ButtonThemeAcceptClick(object sender, EventArgs e)
         {
             if (ComboColor.SelectedIndex > -1 && ComboTheme.SelectedIndex > -1)
             {
@@ -55,10 +54,34 @@ namespace RecipeBook48
             }
         }
 
-        private void ButtonCancel_Click(object sender, EventArgs e)
+        private void ButtonCancelClick(object sender, EventArgs e)
         {
             this.Close();
-            form.Show();
+        }
+
+        private void TextBoxPortClick(object sender, EventArgs e)
+        {
+            TextBoxPort.SelectAll();
+        }
+
+        private void TextBoxUsernameClick(object sender, EventArgs e)
+        {
+            TextBoxUsername.SelectAll();
+        }
+
+        private void TextBoxPassClick(object sender, EventArgs e)
+        {
+            TextBoxPass.SelectAll();
+        }
+
+        private void TextBoxSIDClick(object sender, EventArgs e)
+        {
+            TextBoxSID.SelectAll();
+        }
+
+        private void ButtonSqlTestClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

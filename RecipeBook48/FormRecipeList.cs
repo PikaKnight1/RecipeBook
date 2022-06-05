@@ -20,6 +20,7 @@ namespace RecipeBook48
     {
         Size tileSize = new Size(256, 144);
         FormWelcome form;
+        List<Recipe> recipes;
 
         public FormRecipeList(MetroStyleManager manager, FormWelcome form)
         {
@@ -29,13 +30,14 @@ namespace RecipeBook48
         }
         private void ThisFormLoad(object sender, EventArgs e)
         {
-            List<Recipe> recipes = Recipe.LoadTopRecipes();
+            recipes = Recipe.LoadTopRecipes();
             
             foreach (var recipe in recipes)
             {
 
                 MetroTile tile = new MetroTile();
                 tile.Text = recipe.RecipeName;
+                tile.Name = recipe.RecipeID.ToString();
                 tile.UseTileImage = true;
                 tile.Click += ButtonRecipeClick;
                 tile.StyleManager = styleManager;
@@ -50,8 +52,17 @@ namespace RecipeBook48
 
         private void ButtonRecipeClick(object sender, EventArgs e)
         {
-            form.Show();
-            this.Close();
+            try
+            {
+                if (sender is MetroTile tile)
+                {
+                    var recipe = recipes.Where(i => i.RecipeID.ToString().Equals(tile.Name));
+                    FormRecipeView formRecipeView = new FormRecipeView(this.styleManager, this, recipe.Last());
+                    formRecipeView.Show();
+                }
+                this.Hide();
+            }
+            catch { };
         }
 
         private void ButtonRandomClick(object sender, EventArgs e)

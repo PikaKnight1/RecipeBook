@@ -38,6 +38,7 @@ namespace RecipeBook48
             this.TileRandomRecipe = new MetroFramework.Controls.MetroTile();
             this.TileAddRecipe = new MetroFramework.Controls.MetroTile();
             this.TileRecipeList = new MetroFramework.Controls.MetroTile();
+            this.TileAdminPanel = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@ namespace RecipeBook48
             // TileSetUp
             // 
             this.TileSetUp.ActiveControl = null;
-            this.TileSetUp.Location = new System.Drawing.Point(514, 279);
+            this.TileSetUp.Location = new System.Drawing.Point(187, 269);
             this.TileSetUp.Name = "TileSetUp";
             this.TileSetUp.Size = new System.Drawing.Size(300, 150);
             this.TileSetUp.TabIndex = 4;
@@ -79,7 +80,7 @@ namespace RecipeBook48
             // 
             this.TileRandomRecipe.ActiveControl = null;
             this.TileRandomRecipe.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TileRandomRecipe.Location = new System.Drawing.Point(358, 101);
+            this.TileRandomRecipe.Location = new System.Drawing.Point(350, 101);
             this.TileRandomRecipe.Name = "TileRandomRecipe";
             this.TileRandomRecipe.Size = new System.Drawing.Size(300, 150);
             this.TileRandomRecipe.TabIndex = 3;
@@ -94,7 +95,7 @@ namespace RecipeBook48
             // TileAddRecipe
             // 
             this.TileAddRecipe.ActiveControl = null;
-            this.TileAddRecipe.Location = new System.Drawing.Point(179, 279);
+            this.TileAddRecipe.Location = new System.Drawing.Point(675, 101);
             this.TileAddRecipe.Name = "TileAddRecipe";
             this.TileAddRecipe.Size = new System.Drawing.Size(300, 150);
             this.TileAddRecipe.TabIndex = 1;
@@ -109,7 +110,7 @@ namespace RecipeBook48
             // TileRecipeList
             // 
             this.TileRecipeList.ActiveControl = null;
-            this.TileRecipeList.Location = new System.Drawing.Point(23, 101);
+            this.TileRecipeList.Location = new System.Drawing.Point(25, 101);
             this.TileRecipeList.Name = "TileRecipeList";
             this.TileRecipeList.Size = new System.Drawing.Size(300, 150);
             this.TileRecipeList.TabIndex = 0;
@@ -123,11 +124,26 @@ namespace RecipeBook48
             this.TileRecipeList.UseTileImage = true;
             this.TileRecipeList.Click += new System.EventHandler(this.metroTile1_Click);
             // 
+            // metroTile1
+            // 
+            this.TileAdminPanel.ActiveControl = null;
+            this.TileAdminPanel.Location = new System.Drawing.Point(512, 269);
+            this.TileAdminPanel.Name = "metroTile1";
+            this.TileAdminPanel.Size = new System.Drawing.Size(300, 150);
+            this.TileAdminPanel.TabIndex = 6;
+            this.TileAdminPanel.Text = "Panel Administratora";
+            this.TileAdminPanel.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
+            this.TileAdminPanel.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.TileAdminPanel.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.TileAdminPanel.UseSelectable = true;
+            this.TileAdminPanel.UseTileImage = true;
+            // 
             // FormWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.TileAdminPanel);
             this.Controls.Add(this.DateTimeCurrent);
             this.Controls.Add(this.TileSetUp);
             this.Controls.Add(this.TileRandomRecipe);
@@ -137,7 +153,7 @@ namespace RecipeBook48
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "FormWelcome";
             this.Text = "Przepisy - Witaj!";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormWelcome_FormClosing);
+            this.TransparencyKey = System.Drawing.SystemColors.InactiveBorder;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).EndInit();
             this.ResumeLayout(false);
@@ -155,6 +171,7 @@ namespace RecipeBook48
             this.TileSetUp.StyleManager = styleManager;
             this.TileRecipeList.StyleManager = styleManager;
             this.DateTimeCurrent.StyleManager = styleManager;
+            this.TileAdminPanel.StyleManager = styleManager;
         }
 
         private MetroFramework.Controls.MetroTile TileRecipeList;
@@ -163,5 +180,6 @@ namespace RecipeBook48
         private MetroFramework.Controls.MetroTile TileSetUp;
         private MetroFramework.Controls.MetroDateTime DateTimeCurrent;
         private MetroFramework.Components.MetroStyleManager styleManager;
+        private MetroFramework.Controls.MetroTile TileAdminPanel;
     }
 }

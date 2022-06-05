@@ -27,5 +27,20 @@ namespace RecipeBook48
 
             return finalImage;
         }
+
+        public static bool TestImageURL(string filePath)
+        {
+            try
+            {
+                var webImage = new WebClient().DownloadData(filePath);
+                var streamImage = new MemoryStream(webImage);
+                Image image = Image.FromStream(streamImage);
+                return true;
+            }
+            catch
+            {
+                return false;
+            };
+        }
     }
 }

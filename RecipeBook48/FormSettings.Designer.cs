@@ -42,7 +42,7 @@ namespace RecipeBook48
             this.TextBoxUsername = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxPass = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxSID = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.ButtonConnTest = new MetroFramework.Controls.MetroButton();
             this.LabelAppSettings = new MetroFramework.Controls.MetroLabel();
             this.LabelTheme = new MetroFramework.Controls.MetroLabel();
             this.LabelColor = new MetroFramework.Controls.MetroLabel();
@@ -113,8 +113,7 @@ namespace RecipeBook48
             // 
             // TextBoxIP
             // 
-            this.TextBoxIP.Lines = new string[] {
-        "metroTextBox1"};
+            this.TextBoxIP.Lines = new string[0];
             this.TextBoxIP.Location = new System.Drawing.Point(163, 120);
             this.TextBoxIP.MaxLength = 32767;
             this.TextBoxIP.Name = "TextBoxIP";
@@ -123,14 +122,12 @@ namespace RecipeBook48
             this.TextBoxIP.SelectedText = "";
             this.TextBoxIP.Size = new System.Drawing.Size(194, 23);
             this.TextBoxIP.TabIndex = 6;
-            this.TextBoxIP.Text = "metroTextBox1";
             this.TextBoxIP.UseSelectable = true;
             this.TextBoxIP.Click += new System.EventHandler(this.TextBoxIP_Click);
             // 
             // TextBoxPort
             // 
-            this.TextBoxPort.Lines = new string[] {
-        "metroTextBox2"};
+            this.TextBoxPort.Lines = new string[0];
             this.TextBoxPort.Location = new System.Drawing.Point(163, 149);
             this.TextBoxPort.MaxLength = 32767;
             this.TextBoxPort.Name = "TextBoxPort";
@@ -139,13 +136,12 @@ namespace RecipeBook48
             this.TextBoxPort.SelectedText = "";
             this.TextBoxPort.Size = new System.Drawing.Size(194, 23);
             this.TextBoxPort.TabIndex = 7;
-            this.TextBoxPort.Text = "metroTextBox2";
             this.TextBoxPort.UseSelectable = true;
+            this.TextBoxPort.Click += new System.EventHandler(this.TextBoxPortClick);
             // 
             // TextBoxUsername
             // 
-            this.TextBoxUsername.Lines = new string[] {
-        "metroTextBox3"};
+            this.TextBoxUsername.Lines = new string[0];
             this.TextBoxUsername.Location = new System.Drawing.Point(163, 178);
             this.TextBoxUsername.MaxLength = 32767;
             this.TextBoxUsername.Name = "TextBoxUsername";
@@ -154,13 +150,12 @@ namespace RecipeBook48
             this.TextBoxUsername.SelectedText = "";
             this.TextBoxUsername.Size = new System.Drawing.Size(194, 23);
             this.TextBoxUsername.TabIndex = 8;
-            this.TextBoxUsername.Text = "metroTextBox3";
             this.TextBoxUsername.UseSelectable = true;
+            this.TextBoxUsername.Click += new System.EventHandler(this.TextBoxUsernameClick);
             // 
             // TextBoxPass
             // 
-            this.TextBoxPass.Lines = new string[] {
-        "metroTextBox4"};
+            this.TextBoxPass.Lines = new string[0];
             this.TextBoxPass.Location = new System.Drawing.Point(163, 207);
             this.TextBoxPass.MaxLength = 32767;
             this.TextBoxPass.Name = "TextBoxPass";
@@ -169,13 +164,12 @@ namespace RecipeBook48
             this.TextBoxPass.SelectedText = "";
             this.TextBoxPass.Size = new System.Drawing.Size(194, 23);
             this.TextBoxPass.TabIndex = 9;
-            this.TextBoxPass.Text = "metroTextBox4";
             this.TextBoxPass.UseSelectable = true;
+            this.TextBoxPass.Click += new System.EventHandler(this.TextBoxPassClick);
             // 
             // TextBoxSID
             // 
-            this.TextBoxSID.Lines = new string[] {
-        "metroTextBox5"};
+            this.TextBoxSID.Lines = new string[0];
             this.TextBoxSID.Location = new System.Drawing.Point(163, 236);
             this.TextBoxSID.MaxLength = 32767;
             this.TextBoxSID.Name = "TextBoxSID";
@@ -184,17 +178,18 @@ namespace RecipeBook48
             this.TextBoxSID.SelectedText = "";
             this.TextBoxSID.Size = new System.Drawing.Size(194, 23);
             this.TextBoxSID.TabIndex = 10;
-            this.TextBoxSID.Text = "metroTextBox5";
             this.TextBoxSID.UseSelectable = true;
+            this.TextBoxSID.Click += new System.EventHandler(this.TextBoxSIDClick);
             // 
-            // metroButton1
+            // ButtonConnTest
             // 
-            this.metroButton1.Location = new System.Drawing.Point(256, 265);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(101, 28);
-            this.metroButton1.TabIndex = 11;
-            this.metroButton1.Text = "Test połączenia";
-            this.metroButton1.UseSelectable = true;
+            this.ButtonConnTest.Location = new System.Drawing.Point(256, 265);
+            this.ButtonConnTest.Name = "ButtonConnTest";
+            this.ButtonConnTest.Size = new System.Drawing.Size(101, 28);
+            this.ButtonConnTest.TabIndex = 11;
+            this.ButtonConnTest.Text = "Test połączenia";
+            this.ButtonConnTest.UseSelectable = true;
+            this.ButtonConnTest.Click += new System.EventHandler(this.ButtonSqlTestClick);
             // 
             // LabelAppSettings
             // 
@@ -273,7 +268,7 @@ namespace RecipeBook48
             this.ButtonThemeAccept.TabIndex = 21;
             this.ButtonThemeAccept.Text = "Zastosuj";
             this.ButtonThemeAccept.UseSelectable = true;
-            this.ButtonThemeAccept.Click += new System.EventHandler(this.ButtonThemeAccept_Click);
+            this.ButtonThemeAccept.Click += new System.EventHandler(this.ButtonThemeAcceptClick);
             // 
             // ButtonSQLSave
             // 
@@ -293,7 +288,7 @@ namespace RecipeBook48
             this.ButtonCancel.TabIndex = 23;
             this.ButtonCancel.Text = "Anuluj";
             this.ButtonCancel.UseSelectable = true;
-            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancelClick);
             // 
             // FormSettings
             // 
@@ -308,7 +303,7 @@ namespace RecipeBook48
             this.Controls.Add(this.LabelColor);
             this.Controls.Add(this.LabelTheme);
             this.Controls.Add(this.LabelAppSettings);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.ButtonConnTest);
             this.Controls.Add(this.TextBoxSID);
             this.Controls.Add(this.TextBoxPass);
             this.Controls.Add(this.TextBoxUsername);
@@ -324,8 +319,8 @@ namespace RecipeBook48
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "FormSettings";
             this.Text = "Ustawienia";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSettingss_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSettingsFormClosing);
+            this.Load += new System.EventHandler(this.ThisFormLoad);
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -345,7 +340,7 @@ namespace RecipeBook48
         private MetroFramework.Controls.MetroTextBox TextBoxUsername;
         private MetroFramework.Controls.MetroTextBox TextBoxPass;
         private MetroFramework.Controls.MetroTextBox TextBoxSID;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton ButtonConnTest;
         private MetroFramework.Controls.MetroLabel LabelAppSettings;
         private MetroFramework.Controls.MetroLabel LabelTheme;
         private MetroFramework.Controls.MetroLabel LabelColor;
@@ -367,7 +362,7 @@ namespace RecipeBook48
             this.TextBoxUsername.StyleManager = styleManager;
             this.TextBoxPass.StyleManager = styleManager;
             this.TextBoxSID.StyleManager = styleManager;
-            this.metroButton1.StyleManager = styleManager;
+            this.ButtonConnTest.StyleManager = styleManager;
             this.LabelAppSettings.StyleManager = styleManager;
             this.LabelTheme.StyleManager = styleManager;
             this.LabelColor.StyleManager = styleManager; 

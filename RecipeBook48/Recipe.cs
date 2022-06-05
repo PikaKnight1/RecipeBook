@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RecipeBook48
 {
-    internal class Recipe
+    public class Recipe
     {
         public enum Difficulty
         {
@@ -20,19 +20,21 @@ namespace RecipeBook48
         public int RecipeDifficulty { get; private set; }
         public int RecipeTime { get; private set; }
         public string RecipeAuthor { get; private set; }
+        public string RecipeCategory { get; private set; }
 
-        public Recipe(int recipeID, string recipeName, string recipeImageURL, Difficulty recipeDifficulty, int recipeTime, string recipeAuthor)
+        public Recipe(int recipeID, string recipeName, string recipeImageURL, Difficulty recipeDifficulty, int recipeTime, string recipeAuthor, string recipeCategory)
         {
-            RecipeID = recipeID;
-            RecipeName = recipeName;
-            RecipeImageURL = recipeImageURL;
-            RecipeDifficulty = (int)recipeDifficulty;
-            RecipeTime = recipeTime;
-            RecipeAuthor = recipeAuthor;
+            this.RecipeID = recipeID;
+            this.RecipeName = recipeName;
+            this.RecipeImageURL = recipeImageURL;
+            this.RecipeDifficulty = (int)recipeDifficulty;
+            this.RecipeTime = recipeTime;
+            this.RecipeAuthor = recipeAuthor;
+            this.RecipeCategory = recipeCategory;
         }
 
         public Recipe():
-            this(-1, "NoName", "NoURL", Difficulty.EASY, -1, "NoAuthor")
+            this(-1, "NoName", "NoURL", Difficulty.EASY, -1, "NoAuthor", "NoCat")
         {
         }
 
@@ -42,7 +44,7 @@ namespace RecipeBook48
 
             for (int i = 0; i < 30; i++)
             {
-                Recipe recipe = new Recipe(i, "Przepis {i}", @"https://zjedzciastko.pl/wp-content/uploads/2019/01/ciastka_z_maslem_orzechowym-750x497.jpg", Difficulty.EASY, 60, "pika");
+                Recipe recipe = new Recipe(i, "Przepis {i}", @"https://zjedzciastko.pl/wp-content/uploads/2019/01/ciastka_z_maslem_orzechowym-750x497.jpg", Difficulty.EASY, 60, "pika", "Pierwsza");
                 recipes.Add(recipe);
             }
 
