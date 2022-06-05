@@ -44,10 +44,6 @@ namespace RecipeBook48
             this.TextBoxSID = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.LabelAppSettings = new MetroFramework.Controls.MetroLabel();
-            this.LabelUserSettings = new MetroFramework.Controls.MetroLabel();
-            this.TextBoxAppUsername = new MetroFramework.Controls.MetroTextBox();
-            this.LabelUsername = new MetroFramework.Controls.MetroLabel();
-            this.LabelInfoUser = new MetroFramework.Controls.MetroLabel();
             this.LabelTheme = new MetroFramework.Controls.MetroLabel();
             this.LabelColor = new MetroFramework.Controls.MetroLabel();
             this.ComboColor = new MetroFramework.Controls.MetroComboBox();
@@ -56,9 +52,6 @@ namespace RecipeBook48
             this.ButtonThemeAccept = new MetroFramework.Controls.MetroButton();
             this.ButtonSQLSave = new MetroFramework.Controls.MetroButton();
             this.ButtonCancel = new MetroFramework.Controls.MetroButton();
-            this.ButtonUsernameSave = new MetroFramework.Controls.MetroButton();
-            this.TextBoxUserPassword = new MetroFramework.Controls.MetroTextBox();
-            this.LabelUserPassword = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,51 +207,6 @@ namespace RecipeBook48
             this.LabelAppSettings.TabIndex = 12;
             this.LabelAppSettings.Text = "Ustawienia aplikacji:";
             // 
-            // LabelUserSettings
-            // 
-            this.LabelUserSettings.AutoSize = true;
-            this.LabelUserSettings.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.LabelUserSettings.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.LabelUserSettings.Location = new System.Drawing.Point(23, 321);
-            this.LabelUserSettings.Name = "LabelUserSettings";
-            this.LabelUserSettings.Size = new System.Drawing.Size(203, 25);
-            this.LabelUserSettings.TabIndex = 13;
-            this.LabelUserSettings.Text = "Ustawienia użytkownika:";
-            // 
-            // TextBoxAppUsername
-            // 
-            this.TextBoxAppUsername.Lines = new string[] {
-        "metroTextBox6"};
-            this.TextBoxAppUsername.Location = new System.Drawing.Point(163, 364);
-            this.TextBoxAppUsername.MaxLength = 32767;
-            this.TextBoxAppUsername.Name = "TextBoxAppUsername";
-            this.TextBoxAppUsername.PasswordChar = '\0';
-            this.TextBoxAppUsername.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextBoxAppUsername.SelectedText = "";
-            this.TextBoxAppUsername.Size = new System.Drawing.Size(194, 23);
-            this.TextBoxAppUsername.TabIndex = 15;
-            this.TextBoxAppUsername.Text = "metroTextBox6";
-            this.TextBoxAppUsername.UseSelectable = true;
-            // 
-            // LabelUsername
-            // 
-            this.LabelUsername.AutoSize = true;
-            this.LabelUsername.Location = new System.Drawing.Point(23, 364);
-            this.LabelUsername.Name = "LabelUsername";
-            this.LabelUsername.Size = new System.Drawing.Size(124, 19);
-            this.LabelUsername.TabIndex = 14;
-            this.LabelUsername.Text = "Nazwa użytkownika:";
-            // 
-            // LabelInfoUser
-            // 
-            this.LabelInfoUser.AutoSize = true;
-            this.LabelInfoUser.Location = new System.Drawing.Point(23, 524);
-            this.LabelInfoUser.Name = "LabelInfoUser";
-            this.LabelInfoUser.Size = new System.Drawing.Size(521, 19);
-            this.LabelInfoUser.TabIndex = 16;
-            this.LabelInfoUser.Text = "Nazwa użytkownika wykorzystana będzie wyłącznie do podpisania wysyłanych przepisó" +
-    "w.";
-            // 
             // LabelTheme
             // 
             this.LabelTheme.AutoSize = true;
@@ -347,47 +295,11 @@ namespace RecipeBook48
             this.ButtonCancel.UseSelectable = true;
             this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
-            // ButtonUsernameSave
-            // 
-            this.ButtonUsernameSave.Location = new System.Drawing.Point(256, 426);
-            this.ButtonUsernameSave.Name = "ButtonUsernameSave";
-            this.ButtonUsernameSave.Size = new System.Drawing.Size(101, 28);
-            this.ButtonUsernameSave.TabIndex = 24;
-            this.ButtonUsernameSave.Text = "Zapisz";
-            this.ButtonUsernameSave.UseSelectable = true;
-            // 
-            // TextBoxUserPassword
-            // 
-            this.TextBoxUserPassword.Lines = new string[] {
-        "metroTextBox6"};
-            this.TextBoxUserPassword.Location = new System.Drawing.Point(163, 393);
-            this.TextBoxUserPassword.MaxLength = 32767;
-            this.TextBoxUserPassword.Name = "TextBoxUserPassword";
-            this.TextBoxUserPassword.PasswordChar = '\0';
-            this.TextBoxUserPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextBoxUserPassword.SelectedText = "";
-            this.TextBoxUserPassword.Size = new System.Drawing.Size(194, 23);
-            this.TextBoxUserPassword.TabIndex = 26;
-            this.TextBoxUserPassword.Text = "metroTextBox6";
-            this.TextBoxUserPassword.UseSelectable = true;
-            // 
-            // LabelUserPassword
-            // 
-            this.LabelUserPassword.AutoSize = true;
-            this.LabelUserPassword.Location = new System.Drawing.Point(23, 393);
-            this.LabelUserPassword.Name = "LabelUserPassword";
-            this.LabelUserPassword.Size = new System.Drawing.Size(44, 19);
-            this.LabelUserPassword.TabIndex = 25;
-            this.LabelUserPassword.Text = "Hasło:";
-            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.TextBoxUserPassword);
-            this.Controls.Add(this.LabelUserPassword);
-            this.Controls.Add(this.ButtonUsernameSave);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonSQLSave);
             this.Controls.Add(this.ButtonThemeAccept);
@@ -395,10 +307,6 @@ namespace RecipeBook48
             this.Controls.Add(this.ComboColor);
             this.Controls.Add(this.LabelColor);
             this.Controls.Add(this.LabelTheme);
-            this.Controls.Add(this.LabelInfoUser);
-            this.Controls.Add(this.TextBoxAppUsername);
-            this.Controls.Add(this.LabelUsername);
-            this.Controls.Add(this.LabelUserSettings);
             this.Controls.Add(this.LabelAppSettings);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.TextBoxSID);
@@ -439,10 +347,6 @@ namespace RecipeBook48
         private MetroFramework.Controls.MetroTextBox TextBoxSID;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroLabel LabelAppSettings;
-        private MetroFramework.Controls.MetroLabel LabelUserSettings;
-        private MetroFramework.Controls.MetroTextBox TextBoxAppUsername;
-        private MetroFramework.Controls.MetroLabel LabelUsername;
-        private MetroFramework.Controls.MetroLabel LabelInfoUser;
         private MetroFramework.Controls.MetroLabel LabelTheme;
         private MetroFramework.Controls.MetroLabel LabelColor;
         private MetroFramework.Controls.MetroComboBox ComboColor;
@@ -465,28 +369,18 @@ namespace RecipeBook48
             this.TextBoxSID.StyleManager = styleManager;
             this.metroButton1.StyleManager = styleManager;
             this.LabelAppSettings.StyleManager = styleManager;
-            this.LabelUserSettings.StyleManager = styleManager;
-            this.TextBoxAppUsername.StyleManager = styleManager;
-            this.LabelUsername.StyleManager = styleManager;
-            this.LabelInfoUser.StyleManager = styleManager;
             this.LabelTheme.StyleManager = styleManager;
             this.LabelColor.StyleManager = styleManager; 
             this.ComboColor.StyleManager = styleManager; 
             this.ComboTheme.StyleManager = styleManager;
             this.ButtonCancel.StyleManager = styleManager;
             this.ButtonSQLSave.StyleManager = styleManager;
-            this.ButtonThemeAccept.StyleManager = styleManager;
-            this.TextBoxUserPassword.StyleManager = styleManager;
-            this.LabelUserPassword.StyleManager = styleManager;
-            
+            this.ButtonThemeAccept.StyleManager = styleManager;            
         }
 
         private MetroFramework.Components.MetroStyleManager styleManager;
         private MetroFramework.Controls.MetroButton ButtonThemeAccept;
         private MetroFramework.Controls.MetroButton ButtonSQLSave;
         private MetroFramework.Controls.MetroButton ButtonCancel;
-        private MetroFramework.Controls.MetroButton ButtonUsernameSave;
-        private MetroFramework.Controls.MetroTextBox TextBoxUserPassword;
-        private MetroFramework.Controls.MetroLabel LabelUserPassword;
     }
 }
