@@ -44,18 +44,18 @@ namespace RecipeBook48
             this.LabelAuthorText = new MetroFramework.Controls.MetroLabel();
             this.LabelAuthor = new MetroFramework.Controls.MetroLabel();
             this.LabelIngredients = new MetroFramework.Controls.MetroLabel();
-            this.LabelMaking = new MetroFramework.Controls.MetroLabel();
+            this.LabelSteps = new MetroFramework.Controls.MetroLabel();
             this.PanelIngredients = new MetroFramework.Controls.MetroPanel();
             this.TextBoxIngredients = new MetroFramework.Controls.MetroTextBox();
-            this.PanelMaking = new MetroFramework.Controls.MetroPanel();
-            this.TextBoxMaking = new MetroFramework.Controls.MetroTextBox();
+            this.PanelSteps = new MetroFramework.Controls.MetroPanel();
+            this.TextBoxSteps = new MetroFramework.Controls.MetroTextBox();
             this.styleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.PanelTop.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureRecipe)).BeginInit();
             this.PanelTopLeft.SuspendLayout();
             this.PanelIngredients.SuspendLayout();
-            this.PanelMaking.SuspendLayout();
+            this.PanelSteps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,14 +206,14 @@ namespace RecipeBook48
             this.LabelIngredients.TabIndex = 5;
             this.LabelIngredients.Text = "Składniki:";
             // 
-            // LabelMaking
+            // LabelSteps
             // 
-            this.LabelMaking.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.LabelMaking.Location = new System.Drawing.Point(0, 0);
-            this.LabelMaking.Name = "LabelMaking";
-            this.LabelMaking.Size = new System.Drawing.Size(530, 25);
-            this.LabelMaking.TabIndex = 6;
-            this.LabelMaking.Text = "Wykonanie:";
+            this.LabelSteps.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.LabelSteps.Location = new System.Drawing.Point(0, 0);
+            this.LabelSteps.Name = "LabelSteps";
+            this.LabelSteps.Size = new System.Drawing.Size(530, 25);
+            this.LabelSteps.TabIndex = 6;
+            this.LabelSteps.Text = "Wykonanie:";
             // 
             // PanelIngredients
             // 
@@ -247,35 +247,35 @@ namespace RecipeBook48
             this.TextBoxIngredients.TabIndex = 6;
             this.TextBoxIngredients.UseSelectable = true;
             // 
-            // PanelMaking
+            // PanelSteps
             // 
-            this.PanelMaking.Controls.Add(this.TextBoxMaking);
-            this.PanelMaking.Controls.Add(this.LabelMaking);
-            this.PanelMaking.HorizontalScrollbarBarColor = true;
-            this.PanelMaking.HorizontalScrollbarHighlightOnWheel = false;
-            this.PanelMaking.HorizontalScrollbarSize = 10;
-            this.PanelMaking.Location = new System.Drawing.Point(413, 176);
-            this.PanelMaking.Name = "PanelMaking";
-            this.PanelMaking.Size = new System.Drawing.Size(564, 401);
-            this.PanelMaking.TabIndex = 6;
-            this.PanelMaking.VerticalScrollbarBarColor = true;
-            this.PanelMaking.VerticalScrollbarHighlightOnWheel = false;
-            this.PanelMaking.VerticalScrollbarSize = 10;
+            this.PanelSteps.Controls.Add(this.TextBoxSteps);
+            this.PanelSteps.Controls.Add(this.LabelSteps);
+            this.PanelSteps.HorizontalScrollbarBarColor = true;
+            this.PanelSteps.HorizontalScrollbarHighlightOnWheel = false;
+            this.PanelSteps.HorizontalScrollbarSize = 10;
+            this.PanelSteps.Location = new System.Drawing.Point(413, 176);
+            this.PanelSteps.Name = "PanelSteps";
+            this.PanelSteps.Size = new System.Drawing.Size(564, 401);
+            this.PanelSteps.TabIndex = 6;
+            this.PanelSteps.VerticalScrollbarBarColor = true;
+            this.PanelSteps.VerticalScrollbarHighlightOnWheel = false;
+            this.PanelSteps.VerticalScrollbarSize = 10;
             // 
-            // TextBoxMaking
+            // TextBoxSteps
             // 
-            this.TextBoxMaking.Enabled = false;
-            this.TextBoxMaking.Lines = new string[0];
-            this.TextBoxMaking.Location = new System.Drawing.Point(3, 28);
-            this.TextBoxMaking.MaxLength = 32767;
-            this.TextBoxMaking.Multiline = true;
-            this.TextBoxMaking.Name = "TextBoxMaking";
-            this.TextBoxMaking.PasswordChar = '\0';
-            this.TextBoxMaking.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBoxMaking.SelectedText = "";
-            this.TextBoxMaking.Size = new System.Drawing.Size(558, 373);
-            this.TextBoxMaking.TabIndex = 7;
-            this.TextBoxMaking.UseSelectable = true;
+            this.TextBoxSteps.Enabled = false;
+            this.TextBoxSteps.Lines = new string[0];
+            this.TextBoxSteps.Location = new System.Drawing.Point(3, 28);
+            this.TextBoxSteps.MaxLength = 32767;
+            this.TextBoxSteps.Multiline = true;
+            this.TextBoxSteps.Name = "TextBoxSteps";
+            this.TextBoxSteps.PasswordChar = '\0';
+            this.TextBoxSteps.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TextBoxSteps.SelectedText = "";
+            this.TextBoxSteps.Size = new System.Drawing.Size(558, 373);
+            this.TextBoxSteps.TabIndex = 7;
+            this.TextBoxSteps.UseSelectable = true;
             // 
             // styleManager
             // 
@@ -286,7 +286,7 @@ namespace RecipeBook48
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.PanelMaking);
+            this.Controls.Add(this.PanelSteps);
             this.Controls.Add(this.PanelIngredients);
             this.Controls.Add(this.PanelTop);
             this.MaximumSize = new System.Drawing.Size(1000, 600);
@@ -302,7 +302,7 @@ namespace RecipeBook48
             this.PanelTopLeft.ResumeLayout(false);
             this.PanelTopLeft.PerformLayout();
             this.PanelIngredients.ResumeLayout(false);
-            this.PanelMaking.ResumeLayout(false);
+            this.PanelSteps.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).EndInit();
             this.ResumeLayout(false);
 
@@ -326,11 +326,11 @@ namespace RecipeBook48
             this.LabelTimeText.StyleManager = styleManager;
             this.LabelCategoryText.StyleManager = styleManager;
             this.LabelIngredients.StyleManager = styleManager;
-            this.LabelMaking.StyleManager = styleManager;
+            this.LabelSteps.StyleManager = styleManager;
             this.PanelIngredients.StyleManager = styleManager;
             this.TextBoxIngredients.StyleManager = styleManager;
-            this.PanelMaking.StyleManager = styleManager;
-            this.TextBoxMaking.StyleManager = styleManager;
+            this.PanelSteps.StyleManager = styleManager;
+            this.TextBoxSteps.StyleManager = styleManager;
         }
 
         private MetroFramework.Controls.MetroPanel PanelTop;
@@ -346,11 +346,11 @@ namespace RecipeBook48
         private MetroFramework.Controls.MetroLabel LabelTimeText;
         private MetroFramework.Controls.MetroLabel LabelCategoryText;
         private MetroFramework.Controls.MetroLabel LabelIngredients;
-        private MetroFramework.Controls.MetroLabel LabelMaking;
+        private MetroFramework.Controls.MetroLabel LabelSteps;
         private MetroFramework.Controls.MetroPanel PanelIngredients;
         private MetroFramework.Controls.MetroTextBox TextBoxIngredients;
-        private MetroFramework.Controls.MetroPanel PanelMaking;
-        private MetroFramework.Controls.MetroTextBox TextBoxMaking;
+        private MetroFramework.Controls.MetroPanel PanelSteps;
+        private MetroFramework.Controls.MetroTextBox TextBoxSteps;
         private MetroFramework.Components.MetroStyleManager styleManager;
     }
 }

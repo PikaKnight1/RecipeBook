@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MetroFramework.Forms;
+﻿using MetroFramework;
 using MetroFramework.Components;
-using MetroFramework;
+using MetroFramework.Forms;
+
+using System;
+using System.Windows.Forms;
 
 namespace RecipeBook48
 {
@@ -22,12 +16,11 @@ namespace RecipeBook48
             SetUpStyle(manager);
 
             JsonSerializing.ReadSqlSettings(ref connection);
-
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ThisFormLoad(object sender, EventArgs e)
         {
-             if(!connection.TestSqlConnection())
+            if (!connection.TestSqlConnection())
             {
                 MetroMessageBox.Show(this, "Wystąpił błąd podczas łączenia z bazą! Sprawdź ustawienia.", "Test połączenia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -47,8 +40,8 @@ namespace RecipeBook48
 
         private void TileRandomRecipeClick(object sender, EventArgs e)
         {
-            FormRecipeView frw = new FormRecipeView(this.styleManager, this, SqlSelectCommands.SelectRandomRecipe(connection), connection);
-            frw.Show();
+            FormRecipeView form = new FormRecipeView(this.styleManager, this, SqlSelectCommands.SelectRandomRecipe(connection), connection);
+            form.Show();
             this.Hide();
         }
 

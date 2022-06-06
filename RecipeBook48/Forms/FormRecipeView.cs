@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MetroFramework.Controls;
+﻿using MetroFramework.Components;
 using MetroFramework.Forms;
-using MetroFramework.Components;
+
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace RecipeBook48
 {
@@ -45,7 +39,7 @@ namespace RecipeBook48
 
             for (int i = 1; i <= recipeSteps.Count; i++)
             {
-                TextBoxMaking.AppendText($"{i}. " + recipeSteps[i-1] + Environment.NewLine);
+                TextBoxSteps.AppendText($"{i}. " + recipeSteps[i-1] + Environment.NewLine);
             }
 
             List<Tuple<string, string, string>> recipeIngredients = SqlSelectCommands.SelectRecipeIngredients(connection, recipe.RecipeID);

@@ -1,17 +1,14 @@
-﻿using System;
+﻿using MetroFramework.Components;
+using MetroFramework.Controls;
+using MetroFramework.Forms;
+
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework.Controls;
-using MetroFramework.Forms;
-using MetroFramework.Components;
-using System.Net;
-using System.IO;
+
 
 
 namespace RecipeBook48
@@ -19,7 +16,7 @@ namespace RecipeBook48
     public partial class FormRecipeList : MetroForm
     {
         Size tileSize = new Size(256, 144);
-        FormWelcome form;
+        readonly FormWelcome form;
         List<Recipe> recipes;
 
         public FormRecipeList(MetroStyleManager manager, FormWelcome form)
@@ -41,10 +38,13 @@ namespace RecipeBook48
             foreach (var recipe in recipes)
             {
 
-                MetroTile tile = new MetroTile();
-                tile.Text = recipe.RecipeName;
-                tile.Name = recipe.RecipeID.ToString();
-                tile.UseTileImage = true;
+                MetroTile tile = new MetroTile
+                {
+                    Text = recipe.RecipeName,
+                    Name = recipe.RecipeID.ToString(),
+                    UseTileImage = true
+                };
+
                 tile.Click += ButtonRecipeClick;
                 tile.StyleManager = styleManager;
                 tile.Size = tileSize;
@@ -69,7 +69,10 @@ namespace RecipeBook48
                 }
                 this.Hide();
             }
-            catch { };
+            catch 
+            { 
+                //if error - don't do anything
+            }
         }
 
         private void ButtonRandomClick(object sender, EventArgs e)

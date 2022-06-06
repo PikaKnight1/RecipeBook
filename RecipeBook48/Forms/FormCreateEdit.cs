@@ -1,16 +1,13 @@
-﻿using System;
+﻿using MetroFramework.Components;
+using MetroFramework.Forms;
+using MetroFramework.Controls;
+
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework.Components;
-using MetroFramework.Forms;
-using MetroFramework;
-using MetroFramework.Controls;
 
 namespace RecipeBook48
 {
@@ -51,41 +48,18 @@ namespace RecipeBook48
             return radioBtnChecked.Text;
         }
 
-        private void TextBoxRecipeNameClick(object sender, EventArgs e)
+        private void TextBoxClick(object sender, EventArgs e)
         {
-            TextBoxRecName.SelectAll();
+            if (sender is MetroTextBox b)
+            {
+                b.SelectAll();
+            }
         }
-
-        private void TextBoxTimeClick(object sender, EventArgs e)
-        {
-            TextBoxTime.SelectAll();
-        }
-
-        private void TextBoxPhotoClick(object sender, EventArgs e)
-        {
-            TextBoxPhoto.SelectAll();
-        }
-
         private void TextBoxPhotoTextChanged(object sender, EventArgs e)
         {
             Image image = RecipeImages.LoadImageFromURL(TextBoxPhoto.Text, PictureBoxPhoto.Size);
             PictureBoxPhoto.Image = image;
             this.Refresh();
-        }
-
-        private void TextBoxAddIng(object sender, EventArgs e)
-        {
-            TextBoxPhoto.SelectAll();
-        }
-
-        private void TextBoxIngValueClick(object sender, EventArgs e)
-        {
-            TextBoxIngValue.SelectAll();
-        }
-
-        private void TextBoxMakingClick(object sender, EventArgs e)
-        {
-            TextBoxStep.SelectAll();
         }
 
         private void ButtonAddStepClick(object sender, EventArgs e)
@@ -177,12 +151,12 @@ namespace RecipeBook48
             return errorString.ToString().Length == 0;
         }
 
-        private void FormCreateEdit_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormCreateEditFormClosing(object sender, FormClosingEventArgs e)
         {
             form.Show();
         }
 
-        private void TextBoxTime_TextChanged(object sender, EventArgs e)
+        private void TextBoxTimeTextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(TextBoxTime.Text, "[^0-9]"))
             {
@@ -191,14 +165,13 @@ namespace RecipeBook48
             }
         }
 
-        private void TextBoxIngValue_TextChanged(object sender, EventArgs e)
+        private void TextBoxIngValueTextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(TextBoxIngValue.Text, "[^0-9]"))
             {
                 MetroFramework.MetroMessageBox.Show(this, "To nie liczba!", "Ostrzeżenie");
                 TextBoxIngValue.Text = "";
             }
-
         }
     }
 }

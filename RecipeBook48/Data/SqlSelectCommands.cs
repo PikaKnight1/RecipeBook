@@ -1,9 +1,9 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RecipeBook48
 {
@@ -21,34 +21,31 @@ namespace RecipeBook48
 
         public static List<Recipe> SelectRecipesFiltered(SqlConnection connection, string orderByItem = "", string whereLike = "", params string[] where)
         {
-            List<Recipe> recipes = new List<Recipe>();
-
             StringBuilder whereClause = new StringBuilder();
 
             int counter = 0;
             for(int i = 0; i < where.Length; i++)
             {
-                if (!string.IsNullOrWhiteSpace(where[i]) && !where[i].Equals("Dowolny"))
+                bool testNullOrAny = !string.IsNullOrWhiteSpace(where[i]) && !where[i].Equals("Dowolny");
+                if (testNullOrAny && counter == 0)
                 {
-                    if (counter == 0)
-                    {
-                        counter++;
-                        whereClause.Append(" WHERE ");
-                        whereClause.Append(" " + where[i] + " ");
+                    counter++;
+                    whereClause.Append(" WHERE ");
+                    whereClause.Append(" " + where[i] + " ");
 
-                    }
-                    else if (counter > 0)
-                    {
-                        whereClause.Append(" AND ");
-                        whereClause.Append(where[i]);
-                    }
                 }
+                else if (testNullOrAny && counter > 0)
+                {
+                    whereClause.Append(" AND ");
+                    whereClause.Append(where[i]);
+                }
+
             }
 
             if (whereLike.Length > 0)
             {
                 whereClause.Append(" AND ");
-                whereClause.Append($" recipeName LIKE '%{whereLike}%'");
+                whereClause.Append($" recipeName LIKE '%{whereLike}%' ");
             }
 
             return SelectRecipes(connection, optionalWhereOptions: whereClause.ToString(), optionalOrderByOptions: orderByItem);
@@ -70,13 +67,12 @@ namespace RecipeBook48
             while (reader.Read())
             {
                 int i = 0;
-                Recipe recipe = new Recipe(int.Parse(reader.GetString(i++)), reader.GetString(i++), reader.GetString(i++), reader.GetString(i++), int.Parse(reader.GetString(i++)), reader.GetString(i++), reader.GetString(i++));
+                Recipe recipe = new Recipe(int.Parse(reader.GetString(i++)), reader.GetString(i++), reader.GetString(i++), reader.GetString(i++), int.Parse(reader.GetString(i++)), reader.GetString(i++), reader.GetString(i));
                 list.Add(recipe);
             }
 
             return list;
         }
-
 
         public static List<string> SelectRecipeSteps(SqlConnection connection, int recipeId)
         {

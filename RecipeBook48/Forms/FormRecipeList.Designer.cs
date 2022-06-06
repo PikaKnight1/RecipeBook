@@ -374,7 +374,7 @@ namespace RecipeBook48
             this.RadioSortDateOld.Name = "RadioSortDateOld";
             this.RadioSortDateOld.Size = new System.Drawing.Size(106, 15);
             this.RadioSortDateOld.TabIndex = 6;
-            this.RadioSortDateOld.Tag = "ORDER BY recipeUploadTime DESC";
+            this.RadioSortDateOld.Tag = "ORDER BY recipeUploadTime ASC";
             this.RadioSortDateOld.Text = "Od najstarszych";
             this.RadioSortDateOld.UseSelectable = true;
             // 
@@ -396,7 +396,7 @@ namespace RecipeBook48
             this.RadioSortDateNew.Name = "RadioSortDateNew";
             this.RadioSortDateNew.Size = new System.Drawing.Size(110, 15);
             this.RadioSortDateNew.TabIndex = 4;
-            this.RadioSortDateNew.Tag = "ORDER BY recipeUploadTime ASC";
+            this.RadioSortDateNew.Tag = "ORDER BY recipeUploadTime DESC";
             this.RadioSortDateNew.Text = "Od najnowszych";
             this.RadioSortDateNew.UseSelectable = true;
             // 

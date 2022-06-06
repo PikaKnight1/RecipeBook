@@ -154,7 +154,7 @@ namespace RecipeBook48
             this.Name = "FormWelcome";
             this.Text = "Przepisy - Witaj!";
             this.TransparencyKey = System.Drawing.SystemColors.InactiveBorder;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.ThisFormLoad);
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).EndInit();
             this.ResumeLayout(false);
 

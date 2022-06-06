@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MetroFramework;
 using MetroFramework.Components;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
-using MetroFramework;
 
+using System;
+using System.Windows.Forms;
 
 namespace RecipeBook48
 {
@@ -40,12 +34,6 @@ namespace RecipeBook48
                 //ignore when config file is empty
             }
         }
-
-        private void TextBoxIP_Click(object sender, EventArgs e)
-        {
-            TextBoxIP.SelectAll();
-        }
-
         private void FormSettingsFormClosing(object sender, FormClosingEventArgs e)
         {
             form.Show();
@@ -72,24 +60,9 @@ namespace RecipeBook48
             this.Close();
         }
 
-        private void TextBoxPortClick(object sender, EventArgs e)
+        private void TextBoxClick(object sender, EventArgs e)
         {
-            TextBoxPort.SelectAll();
-        }
-
-        private void TextBoxUsernameClick(object sender, EventArgs e)
-        {
-            TextBoxUsername.SelectAll();
-        }
-
-        private void TextBoxPassClick(object sender, EventArgs e)
-        {
-            TextBoxPass.SelectAll();
-        }
-
-        private void TextBoxSIDClick(object sender, EventArgs e)
-        {
-            TextBoxSID.SelectAll();
+            (sender as MetroTextBox).SelectAll();
         }
 
         private void ButtonSqlTestClick(object sender, EventArgs e)

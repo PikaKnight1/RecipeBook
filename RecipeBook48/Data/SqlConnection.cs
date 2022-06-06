@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Oracle.ManagedDataAccess.Client;
+
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using Oracle.ManagedDataAccess.Client;
 
 namespace RecipeBook48
 {
@@ -21,9 +17,7 @@ namespace RecipeBook48
         [JsonInclude]
         public string Sid { get; set; }
 
-        public SqlConnection()
-        {
-        }
+        private readonly string sqlConnectionString;
 
         public SqlConnection(string host, string port, string user, string password, string sid)
         {
@@ -32,12 +26,19 @@ namespace RecipeBook48
             this.User = user;
             this.Password = password;
             this.Sid = sid;
+
+            this.sqlConnectionString = $"data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)" +
+                                       $"(HOST = {this.Host})" +
+                                       $"(PORT = {this.Port})))" +
+                                       $"(CONNECT_DATA =(SERVICE_NAME = {this.Sid})));" +
+                                       $"USER ID={this.User};" +
+                                       $"PASSWORD={this.Password}";
         }
 
         public bool TestSqlConnection()
         {
-            string sql = $"data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = {this.Host})(PORT = {this.Port})))(CONNECT_DATA =(SERVICE_NAME = {this.Sid})));USER ID={this.User};PASSWORD={this.Password}";
-            OracleConnection connection = new OracleConnection(sql);
+            OracleConnection connection = new OracleConnection(this.sqlConnectionString);
+
             try
             {
                 connection.Open();
@@ -53,9 +54,7 @@ namespace RecipeBook48
 
         public OracleConnection GetConnection()
         {
-            string sql = $"data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = {this.Host})(PORT = {this.Port})))(CONNECT_DATA =(SERVICE_NAME = {this.Sid})));USER ID={this.User};PASSWORD={this.Password}";
-            OracleConnection connection = new OracleConnection(sql);
-            return connection;
+            return new OracleConnection(sqlConnectionString);
         }
 
         public OracleDataReader GetReader(string sqlCommand)
@@ -69,5 +68,16 @@ namespace RecipeBook48
             return reader;
         }
 
+        public void Execute(string sqlCommand)
+        {
+            OracleConnection connect = this.GetConnection();
+            connect.Open();
+
+            OracleCommand command = connect.CreateCommand();
+            command.CommandText = sqlCommand;
+            command.ExecuteNonQuery();
+
+            connect.Close();
+        }
     }
 }

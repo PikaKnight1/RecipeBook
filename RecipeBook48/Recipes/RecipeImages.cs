@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RecipeBook48
 {
-    internal class RecipeImages
+    internal static class RecipeImages
     {
         public static Image LoadImageFromURL(string filePath, Size size)
         {
@@ -23,7 +23,8 @@ namespace RecipeBook48
             }
             catch
             {
-            };
+                //if image won't load - skip showing tile
+            }
 
             return finalImage;
         }
@@ -35,12 +36,13 @@ namespace RecipeBook48
                 var webImage = new WebClient().DownloadData(filePath);
                 var streamImage = new MemoryStream(webImage);
                 Image image = Image.FromStream(streamImage);
+                image.Dispose();
                 return true;
             }
             catch
             {
                 return false;
-            };
+            }
         }
     }
 }

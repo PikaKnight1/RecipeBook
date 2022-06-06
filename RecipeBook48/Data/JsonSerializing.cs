@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using System.IO;
+﻿using MetroFramework;
 using MetroFramework.Components;
-using MetroFramework;
 
+using System.IO;
+using System.Text.Json;
 
 namespace RecipeBook48
 {
@@ -25,7 +19,6 @@ namespace RecipeBook48
             {
                 MetroMessageBox.Show(null, "Wystąpił problem z plikiem konfiguracyjnym SQL, przepisy mogą być niedostępne. Sprawdź ustawienia by skonfigurować połączenie na nowo.");
             }
-
         }
 
         public static void ReadSqlSettings(ref SqlConnection connection)

@@ -123,7 +123,7 @@ namespace RecipeBook48
             this.TextBoxIP.Size = new System.Drawing.Size(194, 23);
             this.TextBoxIP.TabIndex = 6;
             this.TextBoxIP.UseSelectable = true;
-            this.TextBoxIP.Click += new System.EventHandler(this.TextBoxIP_Click);
+            this.TextBoxIP.Click += new System.EventHandler(this.TextBoxClick);
             // 
             // TextBoxPort
             // 
@@ -137,7 +137,7 @@ namespace RecipeBook48
             this.TextBoxPort.Size = new System.Drawing.Size(194, 23);
             this.TextBoxPort.TabIndex = 7;
             this.TextBoxPort.UseSelectable = true;
-            this.TextBoxPort.Click += new System.EventHandler(this.TextBoxPortClick);
+            this.TextBoxPort.Click += new System.EventHandler(this.TextBoxClick);
             // 
             // TextBoxUsername
             // 
@@ -151,7 +151,7 @@ namespace RecipeBook48
             this.TextBoxUsername.Size = new System.Drawing.Size(194, 23);
             this.TextBoxUsername.TabIndex = 8;
             this.TextBoxUsername.UseSelectable = true;
-            this.TextBoxUsername.Click += new System.EventHandler(this.TextBoxUsernameClick);
+            this.TextBoxUsername.Click += new System.EventHandler(this.TextBoxClick);
             // 
             // TextBoxPass
             // 
@@ -165,7 +165,7 @@ namespace RecipeBook48
             this.TextBoxPass.Size = new System.Drawing.Size(194, 23);
             this.TextBoxPass.TabIndex = 9;
             this.TextBoxPass.UseSelectable = true;
-            this.TextBoxPass.Click += new System.EventHandler(this.TextBoxPassClick);
+            this.TextBoxPass.Click += new System.EventHandler(this.TextBoxClick);
             // 
             // TextBoxSID
             // 
@@ -179,7 +179,7 @@ namespace RecipeBook48
             this.TextBoxSID.Size = new System.Drawing.Size(194, 23);
             this.TextBoxSID.TabIndex = 10;
             this.TextBoxSID.UseSelectable = true;
-            this.TextBoxSID.Click += new System.EventHandler(this.TextBoxSIDClick);
+            this.TextBoxSID.Click += new System.EventHandler(this.TextBoxClick);
             // 
             // ButtonConnTest
             // 
