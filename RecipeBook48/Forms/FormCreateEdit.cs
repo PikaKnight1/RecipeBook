@@ -13,8 +13,8 @@ namespace RecipeBook48
 {
     public partial class FormCreateEdit : MetroForm
     {
-        readonly FormWelcome form;
-        readonly FormAdminPanelMain formAdmin;
+        private FormWelcome form;
+        internal FormAdminPanelMain formAdmin;
         readonly Recipe loadingRecipe;
         public FormCreateEdit(MetroStyleManager manager, FormWelcome form)
         {
@@ -29,6 +29,7 @@ namespace RecipeBook48
             InitializeComponent();
             SetUpStyle(manager);
             this.formAdmin = form;
+            this.form = formAdmin.form;
             this.ButtonSend.Click += new System.EventHandler(this.ButtonSendClickUpdate);
             this.Text = "Edytuj przepis";
             this.loadingRecipe = recipe;
@@ -144,6 +145,8 @@ namespace RecipeBook48
                 SqlInsertCommands.InsertSteps(steps, formAdmin.connection, recipe.RecipeID);
                 SqlInsertCommands.InsertIngredients(ingredients, formAdmin.connection, recipe.RecipeID);
 
+                formAdmin = new FormAdminPanelMain(form);
+                form = null;
                 this.Close();
             }
         }
