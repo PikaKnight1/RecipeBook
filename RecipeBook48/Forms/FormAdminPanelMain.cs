@@ -8,7 +8,7 @@ namespace RecipeBook48
 {
     public partial class FormAdminPanelMain : MetroForm
     {
-        readonly FormWelcome form;
+        internal FormWelcome form;
         internal SqlConnection connection;
         public FormAdminPanelMain(FormWelcome form)
         {
