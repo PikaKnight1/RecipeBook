@@ -274,7 +274,7 @@
         /wMxmGvFIhfrzAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="metroTile1.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TileAdminPanel.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAYAAABkW7XSAAABgmlDQ1BJQ0MgcHJvZmlsZQAAKM+VkU0o
         RFEcxX8zg5GIMgvJ4i2wooRkqSFSlMYog4X33pih5r2Z3pvJxlLZKgsfG18LG2u2FrZKKR8lSysrYiM9
@@ -283,7 +283,7 @@
         smMJ9wu3Jy1b8oOzRU4qXlNsZQrmzz3VC+uX7JlppctsY4xxJplCw6DAChnydMtqi+ISk/1oBX+r758S
         lyGuFUxxjJDFQvf9qD/43a2b6ustJtVHofrJ8946ILwFX5ue93noeV9HEHqEC7vkzx7A4LvomyWtfR8a
         1+HssqQZ23C+AS0POd3RfSkkM5hKweuJfFMCmq+hbr7Y288+x3cQl64mrmB3DzrTkr1Q4d215b39ecbv
-        j+g3FjBygpgYNi4AAAAJcEhZcwAAD2AAAA9gAXp4RY0AAAAHdElNRQfmBgUQDgQxnx1KAAAP+UlEQVR4
+        j+g3FjBygpgYNi4AAAAJcEhZcwAAD18AAA9fAdeK2skAAAAHdElNRQfmBgUQDgQxnx1KAAAP+UlEQVR4
         Xu2dCZAcVR2HG0LQEJCbkkuu4gaBKgsR5TKggEo4KngAnoVFFALEAkW5sUChoBABWUzQQA6SAAlEkKPC
         kRCS6SSioMWhIhJYYLPZ3Wx6S8vSWv//6dc7r7vfzE53ltS+2e+r+ioz/d7r7tnp+aX7Tc97AQAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAwoL9/

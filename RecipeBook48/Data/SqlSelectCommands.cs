@@ -19,12 +19,16 @@ namespace RecipeBook48
             return SelectRecipes(connection, 1, optionalOrderByOptions: " ORDER BY dbms_random.value").First();
         }
 
+        public static Recipe SelectOneRecipe(SqlConnection connection, int id)
+        {
+            return SelectRecipes(connection, 1, optionalOrderByOptions: " ORDER BY dbms_random.value", optionalWhereOptions: $" WHERE recipeId = {id} ").First();
+        }
         public static List<Recipe> SelectRecipesFiltered(SqlConnection connection, string orderByItem = "", string whereLike = "", params string[] where)
         {
             StringBuilder whereClause = new StringBuilder();
 
             int counter = 0;
-            for(int i = 0; i < where.Length; i++)
+            for (int i = 0; i < where.Length; i++)
             {
                 bool testNullOrAny = !string.IsNullOrWhiteSpace(where[i]) && !where[i].Equals("Dowolny");
                 if (testNullOrAny && counter == 0)
@@ -44,7 +48,14 @@ namespace RecipeBook48
 
             if (whereLike.Length > 0)
             {
-                whereClause.Append(" AND ");
+                if (counter > 0)
+                {
+                    whereClause.Append(" AND ");
+                }
+                else
+                {
+                    whereClause.Append(" WHERE ");
+                }
                 whereClause.Append($" recipeName LIKE '%{whereLike}%' ");
             }
 
@@ -79,7 +90,7 @@ namespace RecipeBook48
             var list = new List<String>();
             string sqlCommand = "SELECT steptext " +
                                 "FROM steps " +
-                               $"WHERE recipes_recipeID = {recipeId} " + 
+                               $"WHERE recipes_recipeID = {recipeId} " +
                                 "ORDER BY stepId";
 
             OracleDataReader reader = connection.GetReader(sqlCommand);
@@ -118,5 +129,24 @@ namespace RecipeBook48
             return rec.RecipeID;
         }
 
+        public static OracleDataReader GetAdminData(SqlConnection connection)
+        {
+            string sqlCommand = "with steps_count as ( " +
+                                    " SELECT recipes_recipeid as recId, count(*) as stepCount " +
+                                    " FROM steps " +
+                                    " GROUP BY  recipes_recipeid), " +
+                                    " ingredients_count as ( " +
+                                    " SELECT recipes_recipeid as recId, count(*) as ingCount " +
+                                    " FROM ingredients " +
+                                    " GROUP BY recipes_recipeid) " +
+                                " SELECT r.recipeId, r.recipeName, r.authorName, r.recipeUploadTime, s.stepCount, i.ingCount " +
+                                " FROM recipes r JOIN steps_count s " +
+                                " ON s.recId = r.recipeId " +
+                                " JOIN ingredients_count i " +
+                                " ON i.recId = r.recipeId " +
+                                " ORDER BY r.recipeId ";
+
+            return connection.GetReader(sqlCommand);
+        }
     }
 }

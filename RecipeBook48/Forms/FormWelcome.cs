@@ -58,5 +58,12 @@ namespace RecipeBook48
             form.Show();
             this.Hide();
         }
+
+        private void TileAdminPanelClick(object sender, EventArgs e)
+        {
+            FormAdminPanelMain form = new FormAdminPanelMain(this);
+            form.Show();
+            this.Hide();
+        }
     }
 }

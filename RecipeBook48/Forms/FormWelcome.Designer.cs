@@ -124,19 +124,20 @@ namespace RecipeBook48
             this.TileRecipeList.UseTileImage = true;
             this.TileRecipeList.Click += new System.EventHandler(this.TileRecipeListClick);
             // 
-            // metroTile1
+            // TileAdminPanel
             // 
             this.TileAdminPanel.ActiveControl = null;
             this.TileAdminPanel.Location = new System.Drawing.Point(512, 269);
-            this.TileAdminPanel.Name = "metroTile1";
+            this.TileAdminPanel.Name = "TileAdminPanel";
             this.TileAdminPanel.Size = new System.Drawing.Size(300, 150);
             this.TileAdminPanel.TabIndex = 6;
             this.TileAdminPanel.Text = "Panel Administratora";
-            this.TileAdminPanel.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
+            this.TileAdminPanel.TileImage = ((System.Drawing.Image)(resources.GetObject("TileAdminPanel.TileImage")));
             this.TileAdminPanel.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.TileAdminPanel.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.TileAdminPanel.UseSelectable = true;
             this.TileAdminPanel.UseTileImage = true;
+            this.TileAdminPanel.Click += new System.EventHandler(this.TileAdminPanelClick);
             // 
             // FormWelcome
             // 
