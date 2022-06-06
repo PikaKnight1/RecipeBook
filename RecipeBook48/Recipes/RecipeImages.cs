@@ -16,10 +16,24 @@ namespace RecipeBook48
             Image finalImage = null;
             try
             {
+                //get image
                 var webImage = new WebClient().DownloadData(filePath);
                 var streamImage = new MemoryStream(webImage);
                 Image image = Image.FromStream(streamImage);
-                finalImage = (Image)(new Bitmap(image, size));
+
+                //darken image
+                Bitmap bmp = new Bitmap(image, size);
+                Rectangle r = new Rectangle(0, 0, bmp.Width, bmp.Height);
+                int alpha = 128;
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    using (Brush cloud_brush = new SolidBrush(Color.FromArgb(alpha, Color.Black)))
+                    {
+                        g.FillRectangle(cloud_brush, r);
+                    }
+                }
+                finalImage = (Image)bmp;
+
             }
             catch
             {

@@ -42,7 +42,9 @@ namespace RecipeBook48
                 {
                     Text = recipe.RecipeName,
                     Name = recipe.RecipeID.ToString(),
-                    UseTileImage = true
+                    UseTileImage = true,
+                    TileTextFontSize = MetroFramework.MetroTileTextSize.Tall,
+                    TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular,
                 };
 
                 tile.Click += ButtonRecipeClick;
