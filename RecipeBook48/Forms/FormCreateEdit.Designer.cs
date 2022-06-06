@@ -31,12 +31,12 @@ namespace RecipeBook48
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCreateEdit));
             this.LabelRecName = new MetroFramework.Controls.MetroLabel();
             this.LabelRecDifficulty = new MetroFramework.Controls.MetroLabel();
@@ -49,7 +49,7 @@ namespace RecipeBook48
             this.TextBoxPhoto = new MetroFramework.Controls.MetroTextBox();
             this.ComboBoxCategory = new MetroFramework.Controls.MetroComboBox();
             this.TextBoxTime = new MetroFramework.Controls.MetroTextBox();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.PanelDifficulty = new MetroFramework.Controls.MetroPanel();
             this.RadioBtnHard = new MetroFramework.Controls.MetroRadioButton();
             this.RadioBtnMed = new MetroFramework.Controls.MetroRadioButton();
             this.RadioBtnEasy = new MetroFramework.Controls.MetroRadioButton();
@@ -65,7 +65,7 @@ namespace RecipeBook48
             this.IngValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IngType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ButtonAddIng = new MetroFramework.Controls.MetroButton();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.PanelIngType = new MetroFramework.Controls.MetroPanel();
             this.RadioBtnTypeSZT = new MetroFramework.Controls.MetroRadioButton();
             this.RadioBtnTypeSZCZ = new MetroFramework.Controls.MetroRadioButton();
             this.RadioBtnTypeLYZ = new MetroFramework.Controls.MetroRadioButton();
@@ -94,10 +94,10 @@ namespace RecipeBook48
             this.TabsAddEditRecipe.SuspendLayout();
             this.TabBasics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPhoto)).BeginInit();
-            this.metroPanel1.SuspendLayout();
+            this.PanelDifficulty.SuspendLayout();
             this.TabIng.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridIng)).BeginInit();
-            this.metroPanel2.SuspendLayout();
+            this.PanelIngType.SuspendLayout();
             this.TabMaking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridSteps)).BeginInit();
             this.TabSend.SuspendLayout();
@@ -152,7 +152,7 @@ namespace RecipeBook48
             this.TabBasics.Controls.Add(this.TextBoxPhoto);
             this.TabBasics.Controls.Add(this.ComboBoxCategory);
             this.TabBasics.Controls.Add(this.TextBoxTime);
-            this.TabBasics.Controls.Add(this.metroPanel1);
+            this.TabBasics.Controls.Add(this.PanelDifficulty);
             this.TabBasics.Controls.Add(this.TextBoxRecName);
             this.TabBasics.Controls.Add(this.LabelURLDesc);
             this.TabBasics.Controls.Add(this.LabelRecURLDesc);
@@ -249,21 +249,21 @@ namespace RecipeBook48
             this.TextBoxTime.TextChanged += new System.EventHandler(this.TextBoxTime_TextChanged);
             this.TextBoxTime.Click += new System.EventHandler(this.TextBoxTimeClick);
             // 
-            // metroPanel1
+            // PanelDifficulty
             // 
-            this.metroPanel1.Controls.Add(this.RadioBtnHard);
-            this.metroPanel1.Controls.Add(this.RadioBtnMed);
-            this.metroPanel1.Controls.Add(this.RadioBtnEasy);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(194, 59);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(247, 19);
-            this.metroPanel1.TabIndex = 11;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.PanelDifficulty.Controls.Add(this.RadioBtnHard);
+            this.PanelDifficulty.Controls.Add(this.RadioBtnMed);
+            this.PanelDifficulty.Controls.Add(this.RadioBtnEasy);
+            this.PanelDifficulty.HorizontalScrollbarBarColor = true;
+            this.PanelDifficulty.HorizontalScrollbarHighlightOnWheel = false;
+            this.PanelDifficulty.HorizontalScrollbarSize = 10;
+            this.PanelDifficulty.Location = new System.Drawing.Point(194, 59);
+            this.PanelDifficulty.Name = "PanelDifficulty";
+            this.PanelDifficulty.Size = new System.Drawing.Size(247, 19);
+            this.PanelDifficulty.TabIndex = 11;
+            this.PanelDifficulty.VerticalScrollbarBarColor = true;
+            this.PanelDifficulty.VerticalScrollbarHighlightOnWheel = false;
+            this.PanelDifficulty.VerticalScrollbarSize = 10;
             // 
             // RadioBtnHard
             // 
@@ -355,7 +355,7 @@ namespace RecipeBook48
             this.TabIng.Controls.Add(this.LabelTip);
             this.TabIng.Controls.Add(this.GridIng);
             this.TabIng.Controls.Add(this.ButtonAddIng);
-            this.TabIng.Controls.Add(this.metroPanel2);
+            this.TabIng.Controls.Add(this.PanelIngType);
             this.TabIng.Controls.Add(this.TextBoxIngValue);
             this.TabIng.Controls.Add(this.TextBoxIngName);
             this.TabIng.Controls.Add(this.LabelIngType);
@@ -393,27 +393,27 @@ namespace RecipeBook48
             this.GridIng.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridIng.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridIng.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridIng.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridIng.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.GridIng.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridIng.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IngName,
             this.IngValue,
             this.IngType});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridIng.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridIng.DefaultCellStyle = dataGridViewCellStyle8;
             this.GridIng.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.GridIng.EnableHeadersVisualStyles = false;
             this.GridIng.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -421,14 +421,14 @@ namespace RecipeBook48
             this.GridIng.Location = new System.Drawing.Point(3, 3);
             this.GridIng.Name = "GridIng";
             this.GridIng.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridIng.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridIng.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.GridIng.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridIng.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.GridIng.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -473,26 +473,26 @@ namespace RecipeBook48
             this.ButtonAddIng.UseSelectable = true;
             this.ButtonAddIng.Click += new System.EventHandler(this.ButtonAddIngriedent);
             // 
-            // metroPanel2
+            // PanelIngType
             // 
-            this.metroPanel2.Controls.Add(this.RadioBtnTypeSZT);
-            this.metroPanel2.Controls.Add(this.RadioBtnTypeSZCZ);
-            this.metroPanel2.Controls.Add(this.RadioBtnTypeLYZ);
-            this.metroPanel2.Controls.Add(this.RadioBtnTypeSZKL);
-            this.metroPanel2.Controls.Add(this.RadioBtnTypeL);
-            this.metroPanel2.Controls.Add(this.RadioBtnTypeML);
-            this.metroPanel2.Controls.Add(this.RadioBtnTypeKG);
-            this.metroPanel2.Controls.Add(this.RadioBtnTypeG);
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(116, 349);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(301, 111);
-            this.metroPanel2.TabIndex = 8;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
+            this.PanelIngType.Controls.Add(this.RadioBtnTypeSZT);
+            this.PanelIngType.Controls.Add(this.RadioBtnTypeSZCZ);
+            this.PanelIngType.Controls.Add(this.RadioBtnTypeLYZ);
+            this.PanelIngType.Controls.Add(this.RadioBtnTypeSZKL);
+            this.PanelIngType.Controls.Add(this.RadioBtnTypeL);
+            this.PanelIngType.Controls.Add(this.RadioBtnTypeML);
+            this.PanelIngType.Controls.Add(this.RadioBtnTypeKG);
+            this.PanelIngType.Controls.Add(this.RadioBtnTypeG);
+            this.PanelIngType.HorizontalScrollbarBarColor = true;
+            this.PanelIngType.HorizontalScrollbarHighlightOnWheel = false;
+            this.PanelIngType.HorizontalScrollbarSize = 10;
+            this.PanelIngType.Location = new System.Drawing.Point(116, 349);
+            this.PanelIngType.Name = "PanelIngType";
+            this.PanelIngType.Size = new System.Drawing.Size(301, 111);
+            this.PanelIngType.TabIndex = 8;
+            this.PanelIngType.VerticalScrollbarBarColor = true;
+            this.PanelIngType.VerticalScrollbarHighlightOnWheel = false;
+            this.PanelIngType.VerticalScrollbarSize = 10;
             // 
             // RadioBtnTypeSZT
             // 
@@ -704,39 +704,39 @@ namespace RecipeBook48
             this.GridSteps.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridSteps.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridSteps.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSteps.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridSteps.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.GridSteps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridSteps.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridSteps.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridSteps.DefaultCellStyle = dataGridViewCellStyle11;
             this.GridSteps.EnableHeadersVisualStyles = false;
             this.GridSteps.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridSteps.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.GridSteps.Location = new System.Drawing.Point(3, 3);
             this.GridSteps.Name = "GridSteps";
             this.GridSteps.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridSteps.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridSteps.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.GridSteps.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridSteps.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.GridSteps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -811,13 +811,13 @@ namespace RecipeBook48
             this.TabBasics.ResumeLayout(false);
             this.TabBasics.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPhoto)).EndInit();
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
+            this.PanelDifficulty.ResumeLayout(false);
+            this.PanelDifficulty.PerformLayout();
             this.TabIng.ResumeLayout(false);
             this.TabIng.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridIng)).EndInit();
-            this.metroPanel2.ResumeLayout(false);
-            this.metroPanel2.PerformLayout();
+            this.PanelIngType.ResumeLayout(false);
+            this.PanelIngType.PerformLayout();
             this.TabMaking.ResumeLayout(false);
             this.TabMaking.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridSteps)).EndInit();
@@ -839,7 +839,7 @@ namespace RecipeBook48
         private MetroFramework.Controls.MetroTextBox TextBoxPhoto;
         private MetroFramework.Controls.MetroComboBox ComboBoxCategory;
         private MetroFramework.Controls.MetroTextBox TextBoxTime;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroPanel PanelDifficulty;
         private MetroFramework.Controls.MetroRadioButton RadioBtnHard;
         private MetroFramework.Controls.MetroRadioButton RadioBtnMed;
         private MetroFramework.Controls.MetroRadioButton RadioBtnEasy;
@@ -850,7 +850,7 @@ namespace RecipeBook48
         private MetroFramework.Controls.MetroLabel LabelRecCategory;
         private MetroFramework.Controls.MetroTabPage TabIng;
         private MetroFramework.Controls.MetroTabPage TabMaking;
-        private MetroFramework.Controls.MetroPanel metroPanel2;
+        private MetroFramework.Controls.MetroPanel PanelIngType;
         private MetroFramework.Controls.MetroRadioButton RadioBtnTypeSZT;
         private MetroFramework.Controls.MetroRadioButton RadioBtnTypeSZCZ;
         private MetroFramework.Controls.MetroRadioButton RadioBtnTypeLYZ;
@@ -891,7 +891,7 @@ namespace RecipeBook48
             this.TextBoxPhoto.StyleManager = styleManager;
             this.ComboBoxCategory.StyleManager = styleManager;
             this.TextBoxTime.StyleManager = styleManager;
-            this.metroPanel1.StyleManager = styleManager;
+            this.PanelDifficulty.StyleManager = styleManager;
             this.RadioBtnHard.StyleManager = styleManager;
             this.RadioBtnMed.StyleManager = styleManager;
             this.RadioBtnEasy.StyleManager = styleManager;
@@ -902,7 +902,7 @@ namespace RecipeBook48
             this.LabelRecCategory.StyleManager = styleManager;
             this.TabIng.StyleManager = styleManager;
             this.TabMaking.StyleManager = styleManager;
-            this.metroPanel2.StyleManager = styleManager;
+            this.PanelIngType.StyleManager = styleManager;
             this.RadioBtnTypeSZT.StyleManager = styleManager;
             this.RadioBtnTypeSZCZ.StyleManager = styleManager;
             this.RadioBtnTypeLYZ.StyleManager = styleManager;

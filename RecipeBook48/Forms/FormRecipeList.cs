@@ -31,7 +31,13 @@ namespace RecipeBook48
         private void ThisFormLoad(object sender, EventArgs e)
         {
             recipes = SqlSelectCommands.SelectRecipesDefault(form.connection);
-            
+            LoadRecipes(recipes);
+        }
+
+        private void LoadRecipes(List<Recipe> recipes)
+        {
+            MainPanel.Controls.Clear();
+
             foreach (var recipe in recipes)
             {
 
@@ -43,11 +49,12 @@ namespace RecipeBook48
                 tile.StyleManager = styleManager;
                 tile.Size = tileSize;
                 tile.TileImage = RecipeImages.LoadImageFromURL(recipe.RecipeImageURL, tileSize);
-                
+
                 MainPanel.Controls.Add(tile);
 
                 MainPanel.Refresh();
             }
+
         }
 
         private void ButtonRecipeClick(object sender, EventArgs e)
@@ -84,7 +91,26 @@ namespace RecipeBook48
 
         private void ButtonSortClick(object sender, EventArgs e)
         {
+            //1, sprawdzam co wciśnięte
+            var checkedSort = PanelSort.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked);
+            var checkedTime = PanelTime.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked);
+            var checkedDifficulty = PanelDifficulty.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked);
+            var checkedCategory = PanelCategories.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked);
 
+            //2. przekazuję wciśnięte i wyszukiwane dalej i niech się inna metoda tym martwi, chcę tylko listę przepisów
+            recipes = SqlSelectCommands.SelectRecipesFiltered(form.connection, 
+                                                             (checkedSort.Tag ?? string.Empty).ToString(), 
+                                                             TextBoxSearch.Text, 
+                                                             (checkedTime.Tag ?? string.Empty).ToString(), 
+                                                             (checkedDifficulty.Tag ?? string.Empty).ToString(), 
+                                                             (checkedCategory.Tag ?? string.Empty).ToString());
+
+            LoadRecipes(recipes);
+        }
+
+        private void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            ButtonSortClick(sender, e);
         }
     }
 }

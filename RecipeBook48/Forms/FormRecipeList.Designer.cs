@@ -132,6 +132,7 @@ namespace RecipeBook48
             this.RadioCatOthers.Name = "RadioCatOthers";
             this.RadioCatOthers.Size = new System.Drawing.Size(73, 15);
             this.RadioCatOthers.TabIndex = 8;
+            this.RadioCatOthers.Tag = "recipeCategory = \'Pozostałe\'";
             this.RadioCatOthers.Text = "Pozostałe";
             this.RadioCatOthers.UseSelectable = true;
             // 
@@ -142,6 +143,7 @@ namespace RecipeBook48
             this.RadioCatCakes.Name = "RadioCatCakes";
             this.RadioCatCakes.Size = new System.Drawing.Size(100, 15);
             this.RadioCatCakes.TabIndex = 7;
+            this.RadioCatCakes.Tag = "recipeCategory = \'Ciasta i ciastka\'";
             this.RadioCatCakes.Text = "Ciasta i ciastka";
             this.RadioCatCakes.UseSelectable = true;
             // 
@@ -152,6 +154,7 @@ namespace RecipeBook48
             this.RadioCatSoup.Name = "RadioCatSoup";
             this.RadioCatSoup.Size = new System.Drawing.Size(50, 15);
             this.RadioCatSoup.TabIndex = 6;
+            this.RadioCatSoup.Tag = "recipeCategory = \'Zupy\'";
             this.RadioCatSoup.Text = "Zupy";
             this.RadioCatSoup.UseSelectable = true;
             // 
@@ -162,6 +165,7 @@ namespace RecipeBook48
             this.RadioCatFast.Name = "RadioCatFast";
             this.RadioCatFast.Size = new System.Drawing.Size(113, 15);
             this.RadioCatFast.TabIndex = 5;
+            this.RadioCatFast.Tag = "recipeCategory = \'Szybkie przekąski\'";
             this.RadioCatFast.Text = "Szybkie przekąski";
             this.RadioCatFast.UseSelectable = true;
             // 
@@ -172,6 +176,7 @@ namespace RecipeBook48
             this.RadioCatDinner.Name = "RadioCatDinner";
             this.RadioCatDinner.Size = new System.Drawing.Size(96, 15);
             this.RadioCatDinner.TabIndex = 4;
+            this.RadioCatDinner.Tag = "recipeCategory = \'Dania główne\'";
             this.RadioCatDinner.Text = "Dania Główne";
             this.RadioCatDinner.UseSelectable = true;
             // 
@@ -222,6 +227,7 @@ namespace RecipeBook48
             this.RadioTimeLong.Name = "RadioTimeLong";
             this.RadioTimeLong.Size = new System.Drawing.Size(86, 15);
             this.RadioTimeLong.TabIndex = 6;
+            this.RadioTimeLong.Tag = "recipeTime <= 120";
             this.RadioTimeLong.Text = "Do 2 godzin";
             this.RadioTimeLong.UseSelectable = true;
             // 
@@ -232,6 +238,7 @@ namespace RecipeBook48
             this.RadioTimeShort.Name = "RadioTimeShort";
             this.RadioTimeShort.Size = new System.Drawing.Size(88, 15);
             this.RadioTimeShort.TabIndex = 5;
+            this.RadioTimeShort.Tag = "recipeTime <= 30";
             this.RadioTimeShort.Text = "Do 30 minut";
             this.RadioTimeShort.UseSelectable = true;
             // 
@@ -242,6 +249,7 @@ namespace RecipeBook48
             this.RadioTimeMedium.Name = "RadioTimeMedium";
             this.RadioTimeMedium.Size = new System.Drawing.Size(88, 15);
             this.RadioTimeMedium.TabIndex = 4;
+            this.RadioTimeMedium.Tag = "recipeTime <= 60";
             this.RadioTimeMedium.Text = "Do 60 minut";
             this.RadioTimeMedium.UseSelectable = true;
             // 
@@ -292,6 +300,7 @@ namespace RecipeBook48
             this.RadioDiffHard.Name = "RadioDiffHard";
             this.RadioDiffHard.Size = new System.Drawing.Size(59, 15);
             this.RadioDiffHard.TabIndex = 6;
+            this.RadioDiffHard.Tag = "recipeDifficulty = \'Trudny\'";
             this.RadioDiffHard.Text = "Trudny";
             this.RadioDiffHard.UseSelectable = true;
             // 
@@ -302,6 +311,7 @@ namespace RecipeBook48
             this.RadioDiffEasy.Name = "RadioDiffEasy";
             this.RadioDiffEasy.Size = new System.Drawing.Size(54, 15);
             this.RadioDiffEasy.TabIndex = 5;
+            this.RadioDiffEasy.Tag = "recipeDifficulty = \'Łatwy\'";
             this.RadioDiffEasy.Text = "Łatwy";
             this.RadioDiffEasy.UseSelectable = true;
             // 
@@ -312,6 +322,7 @@ namespace RecipeBook48
             this.RadioDiffMedium.Name = "RadioDiffMedium";
             this.RadioDiffMedium.Size = new System.Drawing.Size(56, 15);
             this.RadioDiffMedium.TabIndex = 4;
+            this.RadioDiffMedium.Tag = "recipeDifficulty = \'Średni\'";
             this.RadioDiffMedium.Text = "Średni";
             this.RadioDiffMedium.UseSelectable = true;
             // 
@@ -324,6 +335,7 @@ namespace RecipeBook48
             this.RadioDiffAny.Size = new System.Drawing.Size(70, 15);
             this.RadioDiffAny.TabIndex = 3;
             this.RadioDiffAny.TabStop = true;
+            this.RadioDiffAny.Tag = "";
             this.RadioDiffAny.Text = "Dowolny";
             this.RadioDiffAny.UseSelectable = true;
             // 
@@ -362,6 +374,7 @@ namespace RecipeBook48
             this.RadioSortDateOld.Name = "RadioSortDateOld";
             this.RadioSortDateOld.Size = new System.Drawing.Size(106, 15);
             this.RadioSortDateOld.TabIndex = 6;
+            this.RadioSortDateOld.Tag = "ORDER BY recipeUploadTime DESC";
             this.RadioSortDateOld.Text = "Od najstarszych";
             this.RadioSortDateOld.UseSelectable = true;
             // 
@@ -372,6 +385,7 @@ namespace RecipeBook48
             this.RadioSortZA.Name = "RadioSortZA";
             this.RadioSortZA.Size = new System.Drawing.Size(117, 15);
             this.RadioSortZA.TabIndex = 5;
+            this.RadioSortZA.Tag = "ORDER BY recipeName DESC";
             this.RadioSortZA.Text = "Alfabetycznie Z-A";
             this.RadioSortZA.UseSelectable = true;
             // 
@@ -382,6 +396,7 @@ namespace RecipeBook48
             this.RadioSortDateNew.Name = "RadioSortDateNew";
             this.RadioSortDateNew.Size = new System.Drawing.Size(110, 15);
             this.RadioSortDateNew.TabIndex = 4;
+            this.RadioSortDateNew.Tag = "ORDER BY recipeUploadTime ASC";
             this.RadioSortDateNew.Text = "Od najnowszych";
             this.RadioSortDateNew.UseSelectable = true;
             // 
@@ -394,6 +409,7 @@ namespace RecipeBook48
             this.RadioSortAZ.Size = new System.Drawing.Size(114, 15);
             this.RadioSortAZ.TabIndex = 3;
             this.RadioSortAZ.TabStop = true;
+            this.RadioSortAZ.Tag = "ORDER BY recipeName ASC";
             this.RadioSortAZ.Text = "Alfabetyczne A-Z";
             this.RadioSortAZ.UseSelectable = true;
             // 
@@ -458,6 +474,7 @@ namespace RecipeBook48
             this.ButtonSearch.TabIndex = 2;
             this.ButtonSearch.Text = "Szukaj";
             this.ButtonSearch.UseSelectable = true;
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // MainPanel
             // 

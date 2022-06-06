@@ -19,6 +19,41 @@ namespace RecipeBook48
             return SelectRecipes(connection, 1, optionalOrderByOptions: " ORDER BY dbms_random.value").First();
         }
 
+        public static List<Recipe> SelectRecipesFiltered(SqlConnection connection, string orderByItem = "", string whereLike = "", params string[] where)
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            StringBuilder whereClause = new StringBuilder();
+
+            int counter = 0;
+            for(int i = 0; i < where.Length; i++)
+            {
+                if (!string.IsNullOrWhiteSpace(where[i]) && !where[i].Equals("Dowolny"))
+                {
+                    if (counter == 0)
+                    {
+                        counter++;
+                        whereClause.Append(" WHERE ");
+                        whereClause.Append(" " + where[i] + " ");
+
+                    }
+                    else if (counter > 0)
+                    {
+                        whereClause.Append(" AND ");
+                        whereClause.Append(where[i]);
+                    }
+                }
+            }
+
+            if (whereLike.Length > 0)
+            {
+                whereClause.Append(" AND ");
+                whereClause.Append($" recipeName LIKE '%{whereLike}%'");
+            }
+
+            return SelectRecipes(connection, optionalWhereOptions: whereClause.ToString(), optionalOrderByOptions: orderByItem);
+        }
+
         private static List<Recipe> SelectRecipes(SqlConnection connection, int maxAmount = 100, string optionalWhereOptions = "", string optionalOrderByOptions = " ORDER BY recipeUploadTime ")
         {
             string sqlMainCommand = "SELECT recipeId, recipeName, recipeUrl, recipeDifficulty, recipeTime, authorName, recipeCategory " +

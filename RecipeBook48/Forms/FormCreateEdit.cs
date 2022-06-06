@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Components;
 using MetroFramework.Forms;
+using MetroFramework;
+using MetroFramework.Controls;
 
 namespace RecipeBook48
 {
@@ -39,25 +41,14 @@ namespace RecipeBook48
 
         private string GetSelectedItemIngType()
         {
-            if (RadioBtnTypeG.Checked) return RadioBtnTypeG.Text;
-            if (RadioBtnTypeKG.Checked) return RadioBtnTypeKG.Text;
-            if (RadioBtnTypeML.Checked) return RadioBtnTypeML.Text;
-            if (RadioBtnTypeL.Checked) return RadioBtnTypeL.Text;
-            if (RadioBtnTypeSZKL.Checked) return RadioBtnTypeSZKL.Text;
-            if (RadioBtnTypeLYZ.Checked) return RadioBtnTypeLYZ.Text;
-            if (RadioBtnTypeSZCZ.Checked) return RadioBtnTypeSZCZ.Text;
-            if (RadioBtnTypeSZT.Checked) return RadioBtnTypeSZT.Text;
-
-            return "nie zaznaczono jednostkki";
+            var radioBtnChecked = PanelIngType.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked);
+            return radioBtnChecked.Text;
         }
 
         private string GetSelectedItemDifficulty()
         {
-            if (RadioBtnEasy.Checked) return RadioBtnEasy.Text;
-            if (RadioBtnMed.Checked) return RadioBtnMed.Text;
-            if (RadioBtnHard.Checked) return RadioBtnHard.Text;
-
-            return "nie zaznaczono";
+            var radioBtnChecked = PanelDifficulty.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked);
+            return radioBtnChecked.Text;
         }
 
         private void TextBoxRecipeNameClick(object sender, EventArgs e)
@@ -121,7 +112,12 @@ namespace RecipeBook48
                 List<Tuple<string, string, string>> ingredients = new List<Tuple<string, string, string>>();
                 foreach (DataGridViewRow rows in GridIng.Rows)
                 {
-                    ingredients.Add(Tuple.Create((string)rows.Cells[0].Value, (string)rows.Cells[1].Value, (string)rows.Cells[2].Value));
+                    if (rows.Cells[0].Value != null
+                        && rows.Cells[1].Value != null
+                        && rows.Cells[2].Value != null)
+                    {
+                        ingredients.Add(Tuple.Create((string)rows.Cells[0].Value, (string)rows.Cells[1].Value, (string)rows.Cells[2].Value));
+                    }
                 }
 
                 SqlInsertCommands.InsertRecipe(recipe, form.connection);
