@@ -233,6 +233,7 @@ namespace RecipeBook48
             // TextBoxIngredients
             // 
             this.TextBoxIngredients.BackColor = System.Drawing.Color.White;
+            this.TextBoxIngredients.Enabled = false;
             this.TextBoxIngredients.Lines = new string[0];
             this.TextBoxIngredients.Location = new System.Drawing.Point(3, 30);
             this.TextBoxIngredients.MaxLength = 32767;
@@ -263,6 +264,7 @@ namespace RecipeBook48
             // 
             // TextBoxMaking
             // 
+            this.TextBoxMaking.Enabled = false;
             this.TextBoxMaking.Lines = new string[0];
             this.TextBoxMaking.Location = new System.Drawing.Point(3, 28);
             this.TextBoxMaking.MaxLength = 32767;

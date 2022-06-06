@@ -47,8 +47,9 @@ namespace RecipeBook48
 
         private void TileRandomRecipeClick(object sender, EventArgs e)
         {
-            FormRecipeView frw = new FormRecipeView(this.styleManager, this, SqlCommands.SelectRandomRecipe(connection), connection);
+            FormRecipeView frw = new FormRecipeView(this.styleManager, this, SqlSelectCommands.SelectRandomRecipe(connection), connection);
             frw.Show();
+            this.Hide();
         }
 
         private void TileSetUpClick(object sender, EventArgs e)

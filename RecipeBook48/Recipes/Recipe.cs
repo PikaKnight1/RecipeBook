@@ -27,6 +27,11 @@ namespace RecipeBook48
             this.RecipeCategory = recipeCategory;
         }
 
+        public Recipe(string recipeName, string recipeImageURL, string recipeDifficulty, int recipeTime, string recipeAuthor, string recipeCategory) :
+            this(-1, recipeName, recipeImageURL, recipeDifficulty, recipeTime, recipeAuthor, recipeCategory)
+        {      
+        }
+
         public Recipe():
             this(-1, "NoName", "NoURL", "Łatwy", -1, "NoAuthor", "NoCat")
         {

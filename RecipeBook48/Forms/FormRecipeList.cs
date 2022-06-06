@@ -30,7 +30,7 @@ namespace RecipeBook48
         }
         private void ThisFormLoad(object sender, EventArgs e)
         {
-            recipes = SqlCommands.SelectRecipesDefault(form.connection);
+            recipes = SqlSelectCommands.SelectRecipesDefault(form.connection);
             
             foreach (var recipe in recipes)
             {
@@ -67,21 +67,9 @@ namespace RecipeBook48
 
         private void ButtonRandomClick(object sender, EventArgs e)
         {
-
-            Random random = new Random();
-            int i = random.Next(0, 14);
-
-            if (styleManager.Theme == MetroFramework.MetroThemeStyle.Dark)
-            {
-                styleManager.Theme = MetroFramework.MetroThemeStyle.Light;
-                styleManager.Style = (MetroFramework.MetroColorStyle)i;
-            }
-            else
-            {
-                styleManager.Theme = MetroFramework.MetroThemeStyle.Dark;
-                styleManager.Style = (MetroFramework.MetroColorStyle)i;
-            }
-            this.Refresh();
+            FormRecipeView frw = new FormRecipeView(this.styleManager, this, SqlSelectCommands.SelectRandomRecipe(form.connection), form.connection);
+            frw.Show();
+            this.Hide();
         }
 
         private void TextBoxSearchClick(object sender, EventArgs e)

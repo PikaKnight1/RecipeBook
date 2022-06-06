@@ -14,8 +14,8 @@ namespace RecipeBook48
 {
     public partial class FormCreateEdit : MetroForm
     {
-        MetroForm form;
-        public FormCreateEdit(MetroStyleManager manager, MetroForm form)
+        readonly FormWelcome form;
+        public FormCreateEdit(MetroStyleManager manager, FormWelcome form)
         {
             InitializeComponent();
             SetUpStyle(manager);
@@ -23,14 +23,21 @@ namespace RecipeBook48
             this.form = form;
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void ButtonAddIngriedent(object sender, EventArgs e)
         {
-            GridIng.Rows.Add(TextBoxIngValue.Text, TextBoxIngName.Text, getSelectedItem());
-            TextBoxIngValue.Text = "";
-            TextBoxIngName.Text = "";
+            if (!String.IsNullOrWhiteSpace(TextBoxIngName.Text) && !String.IsNullOrWhiteSpace(TextBoxIngValue.Text))
+            {
+                GridIng.Rows.Add(TextBoxIngName.Text, TextBoxIngValue.Text, GetSelectedItemIngType());
+                TextBoxIngValue.Text = "";
+                TextBoxIngName.Text = "";
+            }
+            else
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Conajmniej jedna informacja jest pusta. Uzupełnij obie!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
-        private string getSelectedItem()
+        private string GetSelectedItemIngType()
         {
             if (RadioBtnTypeG.Checked) return RadioBtnTypeG.Text;
             if (RadioBtnTypeKG.Checked) return RadioBtnTypeKG.Text;
@@ -44,9 +51,13 @@ namespace RecipeBook48
             return "nie zaznaczono jednostkki";
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private string GetSelectedItemDifficulty()
         {
-            GridIng.SelectedRows.Clear();
+            if (RadioBtnEasy.Checked) return RadioBtnEasy.Text;
+            if (RadioBtnMed.Checked) return RadioBtnMed.Text;
+            if (RadioBtnHard.Checked) return RadioBtnHard.Text;
+
+            return "nie zaznaczono";
         }
 
         private void TextBoxRecipeNameClick(object sender, EventArgs e)
@@ -96,16 +107,27 @@ namespace RecipeBook48
         {
             if (VerifyEverything())
             {
-                //sql wysłanie na serwer
-                //this.Close();
+                Recipe recipe = new Recipe(TextBoxRecName.Text, TextBoxPhoto.Text, GetSelectedItemDifficulty(), int.Parse(TextBoxTime.Text), TextBoxAuthor.Text, ComboBoxCategory.SelectedItem.ToString());
+                List<string> steps = new List<string>();
 
                 foreach(DataGridViewRow rows in GridSteps.Rows)
                 {
                     foreach (DataGridViewCell cell in rows.Cells)
                     {
-                        ErrorLabel.Text += cell.Value;
+                        steps.Add((string)cell.Value);
                     }
                 }
+
+                List<Tuple<string, string, string>> ingredients = new List<Tuple<string, string, string>>();
+                foreach (DataGridViewRow rows in GridIng.Rows)
+                {
+                    ingredients.Add(Tuple.Create((string)rows.Cells[0].Value, (string)rows.Cells[1].Value, (string)rows.Cells[2].Value));
+                }
+
+                SqlInsertCommands.InsertRecipe(recipe, form.connection);
+                int lastId = SqlSelectCommands.GetLastRecipeId(form.connection);
+                SqlInsertCommands.InsertSteps(steps, form.connection, lastId);
+                SqlInsertCommands.InsertIngredients(ingredients, form.connection, lastId);
             }
         }
 
@@ -116,6 +138,11 @@ namespace RecipeBook48
             if (String.IsNullOrWhiteSpace(TextBoxRecName.Text))
             {
                 errorString.AppendLine("Nie ustawiono nazwy przepisu.");
+            }
+
+            if (String.IsNullOrWhiteSpace(TextBoxAuthor.Text))
+            {
+                errorString.AppendLine("Nie ustawiono autora przepisu.");
             }
 
             if (String.IsNullOrWhiteSpace(TextBoxTime.Text))
@@ -133,9 +160,21 @@ namespace RecipeBook48
                 errorString.AppendLine("Nie dodano linku do zdjęcia.");
             }
 
-            if (RecipeImages.TestImageURL(TextBoxPhoto.Text))
+            if (!RecipeImages.TestImageURL(TextBoxPhoto.Text))
             {
                 errorString.AppendLine("Niepoprawne zdjęcie");
+            }
+
+            if (!int.TryParse(TextBoxTime.Text, out int time))
+            {
+                errorString.AppendLine($"Zły format czasu - wprowadź liczbę całkowitą mniejszą od {int.MaxValue}");
+            }
+            else
+            {
+                if (time <= 0)
+                {
+                    errorString.AppendLine($"Zły format czasu - czas nie może być krótszy od 0");
+                }
             }
 
             ErrorLabel.Text = errorString.ToString();
@@ -147,8 +186,22 @@ namespace RecipeBook48
             form.Show();
         }
 
-        private void FormCreateEdit_Load(object sender, EventArgs e)
+        private void TextBoxTime_TextChanged(object sender, EventArgs e)
         {
+            if (System.Text.RegularExpressions.Regex.IsMatch(TextBoxTime.Text, "[^0-9]"))
+            {
+                MetroFramework.MetroMessageBox.Show(this, "To nie liczba!", "Ostrzeżenie");
+                TextBoxTime.Text = "";
+            }
+        }
+
+        private void TextBoxIngValue_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(TextBoxIngValue.Text, "[^0-9]"))
+            {
+                MetroFramework.MetroMessageBox.Show(this, "To nie liczba!", "Ostrzeżenie");
+                TextBoxIngValue.Text = "";
+            }
 
         }
     }

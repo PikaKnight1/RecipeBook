@@ -41,17 +41,19 @@ namespace RecipeBook48
 
             PictureRecipe.Image = RecipeImages.LoadImageFromURL(recipe.RecipeImageURL, PictureRecipe.Size);
 
-            List<string> recipeSteps = SqlCommands.SelectRecipeSteps(connection, recipe.RecipeID);
+            List<string> recipeSteps = SqlSelectCommands.SelectRecipeSteps(connection, recipe.RecipeID);
 
             for (int i = 1; i <= recipeSteps.Count; i++)
             {
                 TextBoxMaking.AppendText($"{i}. " + recipeSteps[i-1] + Environment.NewLine);
             }
 
-            for (int i = 0; i < 100; i++)
+            List<Tuple<string, string, string>> recipeIngredients = SqlSelectCommands.SelectRecipeIngredients(connection, recipe.RecipeID);
+
+            for (int i = 0; i < recipeIngredients.Count; i++)
             {
-                TextBoxIngredients.AppendText("Siemanko, witaj w mojej aplikacji, to tylko test tekstowy yyyy tekst testowy xD");
-                TextBoxIngredients.AppendText(Environment.NewLine);
+                TextBoxIngredients.AppendText(recipeIngredients[i].Item3 + " " + recipeIngredients[i].Item2 + " - ");
+                TextBoxIngredients.AppendText(recipeIngredients[i].Item1 + Environment.NewLine);
             }
         }
 

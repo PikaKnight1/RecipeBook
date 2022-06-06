@@ -89,7 +89,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\JsonSerializing.cs" />
-    <Compile Include="Data\SqlCommands.cs" />
+    <Compile Include="Data\SqlInsertCommands.cs" />
+    <Compile Include="Data\SqlSelectCommands.cs" />
     <Compile Include="Recipes\RecipeImages.cs" />
     <Compile Include="Forms\FormCreateEdit.cs">
       <SubType>Form</SubType>

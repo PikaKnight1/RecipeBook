@@ -43,6 +43,8 @@ namespace RecipeBook48
             this.LabelRecTime = new MetroFramework.Controls.MetroLabel();
             this.TabsAddEditRecipe = new MetroFramework.Controls.MetroTabControl();
             this.TabBasics = new MetroFramework.Controls.MetroTabPage();
+            this.TextBoxAuthor = new MetroFramework.Controls.MetroTextBox();
+            this.LabelAuthor = new MetroFramework.Controls.MetroLabel();
             this.PictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.TextBoxPhoto = new MetroFramework.Controls.MetroTextBox();
             this.ComboBoxCategory = new MetroFramework.Controls.MetroComboBox();
@@ -57,6 +59,7 @@ namespace RecipeBook48
             this.LabelRecPhoto = new MetroFramework.Controls.MetroLabel();
             this.LabelRecCategory = new MetroFramework.Controls.MetroLabel();
             this.TabIng = new MetroFramework.Controls.MetroTabPage();
+            this.LabelTip = new MetroFramework.Controls.MetroLabel();
             this.GridIng = new MetroFramework.Controls.MetroGrid();
             this.IngName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IngValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +80,7 @@ namespace RecipeBook48
             this.LabelIngValue = new MetroFramework.Controls.MetroLabel();
             this.LabelIngName = new MetroFramework.Controls.MetroLabel();
             this.TabMaking = new MetroFramework.Controls.MetroTabPage();
+            this.LabelTipStep = new MetroFramework.Controls.MetroLabel();
             this.ButtonAddStep = new MetroFramework.Controls.MetroButton();
             this.TextBoxStep = new MetroFramework.Controls.MetroTextBox();
             this.LabelMaking = new MetroFramework.Controls.MetroLabel();
@@ -142,6 +146,8 @@ namespace RecipeBook48
             // 
             // TabBasics
             // 
+            this.TabBasics.Controls.Add(this.TextBoxAuthor);
+            this.TabBasics.Controls.Add(this.LabelAuthor);
             this.TabBasics.Controls.Add(this.PictureBoxPhoto);
             this.TabBasics.Controls.Add(this.TextBoxPhoto);
             this.TabBasics.Controls.Add(this.ComboBoxCategory);
@@ -167,9 +173,31 @@ namespace RecipeBook48
             this.TabBasics.VerticalScrollbarHighlightOnWheel = false;
             this.TabBasics.VerticalScrollbarSize = 10;
             // 
+            // TextBoxAuthor
+            // 
+            this.TextBoxAuthor.Lines = new string[0];
+            this.TextBoxAuthor.Location = new System.Drawing.Point(669, 30);
+            this.TextBoxAuthor.MaxLength = 32767;
+            this.TextBoxAuthor.Name = "TextBoxAuthor";
+            this.TextBoxAuthor.PasswordChar = '\0';
+            this.TextBoxAuthor.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextBoxAuthor.SelectedText = "";
+            this.TextBoxAuthor.Size = new System.Drawing.Size(247, 23);
+            this.TextBoxAuthor.TabIndex = 17;
+            this.TextBoxAuthor.UseSelectable = true;
+            // 
+            // LabelAuthor
+            // 
+            this.LabelAuthor.AutoSize = true;
+            this.LabelAuthor.Location = new System.Drawing.Point(478, 30);
+            this.LabelAuthor.Name = "LabelAuthor";
+            this.LabelAuthor.Size = new System.Drawing.Size(46, 19);
+            this.LabelAuthor.TabIndex = 16;
+            this.LabelAuthor.Text = "Autor:";
+            // 
             // PictureBoxPhoto
             // 
-            this.PictureBoxPhoto.Location = new System.Drawing.Point(289, 250);
+            this.PictureBoxPhoto.Location = new System.Drawing.Point(289, 260);
             this.PictureBoxPhoto.Name = "PictureBoxPhoto";
             this.PictureBoxPhoto.Size = new System.Drawing.Size(368, 188);
             this.PictureBoxPhoto.TabIndex = 15;
@@ -178,7 +206,7 @@ namespace RecipeBook48
             // TextBoxPhoto
             // 
             this.TextBoxPhoto.Lines = new string[0];
-            this.TextBoxPhoto.Location = new System.Drawing.Point(63, 219);
+            this.TextBoxPhoto.Location = new System.Drawing.Point(63, 229);
             this.TextBoxPhoto.MaxLength = 32767;
             this.TextBoxPhoto.Name = "TextBoxPhoto";
             this.TextBoxPhoto.PasswordChar = '\0';
@@ -200,9 +228,9 @@ namespace RecipeBook48
             "Zupy",
             "Ciasta i ciastka",
             "Pozostałe"});
-            this.ComboBoxCategory.Location = new System.Drawing.Point(667, 30);
+            this.ComboBoxCategory.Location = new System.Drawing.Point(669, 62);
             this.ComboBoxCategory.Name = "ComboBoxCategory";
-            this.ComboBoxCategory.Size = new System.Drawing.Size(276, 29);
+            this.ComboBoxCategory.Size = new System.Drawing.Size(247, 29);
             this.ComboBoxCategory.TabIndex = 13;
             this.ComboBoxCategory.UseSelectable = true;
             // 
@@ -218,6 +246,7 @@ namespace RecipeBook48
             this.TextBoxTime.Size = new System.Drawing.Size(166, 23);
             this.TextBoxTime.TabIndex = 12;
             this.TextBoxTime.UseSelectable = true;
+            this.TextBoxTime.TextChanged += new System.EventHandler(this.TextBoxTime_TextChanged);
             this.TextBoxTime.Click += new System.EventHandler(this.TextBoxTimeClick);
             // 
             // metroPanel1
@@ -285,18 +314,18 @@ namespace RecipeBook48
             // LabelURLDesc
             // 
             this.LabelURLDesc.AutoSize = true;
-            this.LabelURLDesc.Location = new System.Drawing.Point(3, 147);
+            this.LabelURLDesc.Location = new System.Drawing.Point(3, 148);
             this.LabelURLDesc.Name = "LabelURLDesc";
             this.LabelURLDesc.Size = new System.Drawing.Size(491, 76);
             this.LabelURLDesc.TabIndex = 8;
             this.LabelURLDesc.Text = "Jeśli link jest poprawny, poniżej pojawi się zdjęcie.\r\nW przeciwnym wypadku zdjęc" +
     "ie jest niedostępne, lub w nieodpowiednim formacie.\r\nWspierane formaty: jpg, png" +
-    ", proporcje: 16:9\r\n";
+    ", preferowane proporcje: 16:9\r\n";
             // 
             // LabelRecURLDesc
             // 
             this.LabelRecURLDesc.AutoSize = true;
-            this.LabelRecURLDesc.Location = new System.Drawing.Point(3, 126);
+            this.LabelRecURLDesc.Location = new System.Drawing.Point(3, 131);
             this.LabelRecURLDesc.Name = "LabelRecURLDesc";
             this.LabelRecURLDesc.Size = new System.Drawing.Size(655, 19);
             this.LabelRecURLDesc.TabIndex = 7;
@@ -306,7 +335,7 @@ namespace RecipeBook48
             // LabelRecPhoto
             // 
             this.LabelRecPhoto.AutoSize = true;
-            this.LabelRecPhoto.Location = new System.Drawing.Point(3, 219);
+            this.LabelRecPhoto.Location = new System.Drawing.Point(3, 229);
             this.LabelRecPhoto.Name = "LabelRecPhoto";
             this.LabelRecPhoto.Size = new System.Drawing.Size(54, 19);
             this.LabelRecPhoto.TabIndex = 6;
@@ -315,7 +344,7 @@ namespace RecipeBook48
             // LabelRecCategory
             // 
             this.LabelRecCategory.AutoSize = true;
-            this.LabelRecCategory.Location = new System.Drawing.Point(560, 30);
+            this.LabelRecCategory.Location = new System.Drawing.Point(478, 62);
             this.LabelRecCategory.Name = "LabelRecCategory";
             this.LabelRecCategory.Size = new System.Drawing.Size(68, 19);
             this.LabelRecCategory.TabIndex = 5;
@@ -323,6 +352,7 @@ namespace RecipeBook48
             // 
             // TabIng
             // 
+            this.TabIng.Controls.Add(this.LabelTip);
             this.TabIng.Controls.Add(this.GridIng);
             this.TabIng.Controls.Add(this.ButtonAddIng);
             this.TabIng.Controls.Add(this.metroPanel2);
@@ -343,8 +373,20 @@ namespace RecipeBook48
             this.TabIng.VerticalScrollbarHighlightOnWheel = false;
             this.TabIng.VerticalScrollbarSize = 10;
             // 
+            // LabelTip
+            // 
+            this.LabelTip.AutoSize = true;
+            this.LabelTip.Location = new System.Drawing.Point(590, 280);
+            this.LabelTip.Name = "LabelTip";
+            this.LabelTip.Size = new System.Drawing.Size(316, 57);
+            this.LabelTip.TabIndex = 12;
+            this.LabelTip.Text = "Porada:\r\nAby usunąć błednie wpisany składnik, kliknij na niego.\r\nNastępnie wciśni" +
+    "j przycisk DELETE na klawiaturze.";
+            // 
             // GridIng
             // 
+            this.GridIng.AllowUserToAddRows = false;
+            this.GridIng.AllowUserToResizeColumns = false;
             this.GridIng.AllowUserToResizeRows = false;
             this.GridIng.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridIng.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -372,6 +414,7 @@ namespace RecipeBook48
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridIng.DefaultCellStyle = dataGridViewCellStyle2;
+            this.GridIng.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.GridIng.EnableHeadersVisualStyles = false;
             this.GridIng.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridIng.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -428,7 +471,7 @@ namespace RecipeBook48
             this.ButtonAddIng.TabIndex = 9;
             this.ButtonAddIng.Text = "Dodaj";
             this.ButtonAddIng.UseSelectable = true;
-            this.ButtonAddIng.Click += new System.EventHandler(this.metroButton1_Click);
+            this.ButtonAddIng.Click += new System.EventHandler(this.ButtonAddIngriedent);
             // 
             // metroPanel2
             // 
@@ -545,6 +588,7 @@ namespace RecipeBook48
             this.TextBoxIngValue.Size = new System.Drawing.Size(301, 23);
             this.TextBoxIngValue.TabIndex = 7;
             this.TextBoxIngValue.UseSelectable = true;
+            this.TextBoxIngValue.TextChanged += new System.EventHandler(this.TextBoxIngValue_TextChanged);
             this.TextBoxIngValue.Click += new System.EventHandler(this.TextBoxIngValueClick);
             // 
             // TextBoxIngName
@@ -590,6 +634,7 @@ namespace RecipeBook48
             // 
             // TabMaking
             // 
+            this.TabMaking.Controls.Add(this.LabelTipStep);
             this.TabMaking.Controls.Add(this.ButtonAddStep);
             this.TabMaking.Controls.Add(this.TextBoxStep);
             this.TabMaking.Controls.Add(this.LabelMaking);
@@ -605,6 +650,16 @@ namespace RecipeBook48
             this.TabMaking.VerticalScrollbarBarColor = true;
             this.TabMaking.VerticalScrollbarHighlightOnWheel = false;
             this.TabMaking.VerticalScrollbarSize = 10;
+            // 
+            // LabelTipStep
+            // 
+            this.LabelTipStep.AutoSize = true;
+            this.LabelTipStep.Location = new System.Drawing.Point(3, 404);
+            this.LabelTipStep.Name = "LabelTipStep";
+            this.LabelTipStep.Size = new System.Drawing.Size(296, 57);
+            this.LabelTipStep.TabIndex = 20;
+            this.LabelTipStep.Text = "Porada:\r\nAby usunąć błednie wpisany krok, kliknij na niego.\r\nNastępnie wciśnij pr" +
+    "zycisk DELETE na klawiaturze.";
             // 
             // ButtonAddStep
             // 
@@ -641,6 +696,8 @@ namespace RecipeBook48
             // 
             // GridSteps
             // 
+            this.GridSteps.AllowUserToAddRows = false;
+            this.GridSteps.AllowUserToResizeColumns = false;
             this.GridSteps.AllowUserToResizeRows = false;
             this.GridSteps.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridSteps.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -750,7 +807,6 @@ namespace RecipeBook48
             this.Name = "FormCreateEdit";
             this.Text = "Dodaj przepis";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCreateEdit_FormClosing);
-            this.Load += new System.EventHandler(this.FormCreateEdit_Load);
             this.TabsAddEditRecipe.ResumeLayout(false);
             this.TabBasics.ResumeLayout(false);
             this.TabBasics.PerformLayout();
@@ -870,8 +926,16 @@ namespace RecipeBook48
             this.ButtonSend.StyleManager = styleManager;
             this.LabelInfoSend.StyleManager = styleManager;
             this.ErrorLabel.StyleManager = styleManager;
+            this.TextBoxAuthor.StyleManager = styleManager;
+            this.LabelAuthor.StyleManager = styleManager;
+            this.LabelTip.StyleManager = styleManager;
+            this.LabelTipStep.StyleManager = styleManager;
         }
 
         private MetroFramework.Controls.MetroLabel ErrorLabel;
+        private MetroFramework.Controls.MetroTextBox TextBoxAuthor;
+        private MetroFramework.Controls.MetroLabel LabelAuthor;
+        private MetroFramework.Controls.MetroLabel LabelTip;
+        private MetroFramework.Controls.MetroLabel LabelTipStep;
     }
 }
