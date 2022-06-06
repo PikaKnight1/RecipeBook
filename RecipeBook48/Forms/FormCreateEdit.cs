@@ -98,6 +98,8 @@ namespace RecipeBook48
                 int lastId = SqlSelectCommands.GetLastRecipeId(form.connection);
                 SqlInsertCommands.InsertSteps(steps, form.connection, lastId);
                 SqlInsertCommands.InsertIngredients(ingredients, form.connection, lastId);
+
+                this.Close();
             }
         }
 

@@ -94,13 +94,11 @@ namespace RecipeBook48
 
         private void ButtonSortClick(object sender, EventArgs e)
         {
-            //1, sprawdzam co wciśnięte
             var checkedSort = PanelSort.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked);
             var checkedTime = PanelTime.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked);
             var checkedDifficulty = PanelDifficulty.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked);
             var checkedCategory = PanelCategories.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked);
 
-            //2. przekazuję wciśnięte i wyszukiwane dalej i niech się inna metoda tym martwi, chcę tylko listę przepisów
             recipes = SqlSelectCommands.SelectRecipesFiltered(form.connection, 
                                                              (checkedSort.Tag ?? string.Empty).ToString(), 
                                                              TextBoxSearch.Text, 
