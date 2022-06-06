@@ -1,14 +1,6 @@
 ﻿using MetroFramework.Forms;
 using Oracle.ManagedDataAccess.Client;
 using System;
-
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -17,7 +9,7 @@ namespace RecipeBook48
     public partial class FormAdminPanelMain : MetroForm
     {
         readonly FormWelcome form;
-        public SqlConnection connection;
+        internal SqlConnection connection;
         public FormAdminPanelMain(FormWelcome form)
         {
             InitializeComponent();

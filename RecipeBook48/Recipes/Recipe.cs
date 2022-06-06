@@ -31,25 +31,5 @@ namespace RecipeBook48
             this(-1, recipeName, recipeImageURL, recipeDifficulty, recipeTime, recipeAuthor, recipeCategory)
         {      
         }
-
-        public Recipe():
-            this(-1, "NoName", "NoURL", "Łatwy", -1, "NoAuthor", "NoCat")
-        {
-        }
-
-        public static List<Recipe> LoadTopRecipes()
-        {
-            List<Recipe> recipes = new List<Recipe>();
-
-            for (int i = 0; i < 30; i++)
-            {
-                Recipe recipe = new Recipe(i, "Przepis {i}", @"https://zjedzciastko.pl/wp-content/uploads/2019/01/ciastka_z_maslem_orzechowym-750x497.jpg", "Łatwy", 60, "pika", "Pierwsza");
-                recipes.Add(recipe);
-            }
-
-            return recipes;
-        }
-
-
     }
 }

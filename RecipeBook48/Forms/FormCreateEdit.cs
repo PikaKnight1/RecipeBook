@@ -251,5 +251,10 @@ namespace RecipeBook48
                 TextBoxIngValue.Text = "";
             }
         }
+
+        private void FormCreateEdit_Load(object sender, EventArgs e)
+        {
+            TabsAddEditRecipe.SelectTab(0);
+        }
     }
 }
