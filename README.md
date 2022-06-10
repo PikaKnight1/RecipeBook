@@ -13,6 +13,6 @@ Użyte ikony pochodzą z: https://www.vecteezy.com/vector-art/7772644-restaurant
  ![](https://pikaknight1.files.wordpress.com/2022/06/3.jpg)
  Pierwszy z ekranów kreatora, pozwalającego dodać kolejne przepisy. <br>
  ![](https://pikaknight1.files.wordpress.com/2022/06/4.jpg)
- Ekran ustawień. Pozwala ustawić dane do połączenia z bazą, jak i wybrać motyw programu - dostępne: jasny/ciemny motyw oraz kilka kolorów akcentów.<br>
+ Ekran ustawień. Pozwala ustawić dane do połączenia z bazą, jak i wybrać motyw programu - dostępne: jasny/ciemny motyw oraz kilka kolorów akcentów. Dane zapisywane są lokalnie, w plikach .json <br>
  ![](https://pikaknight1.files.wordpress.com/2022/06/5.jpg)
  Panel administracyjny, stąd można usuwać oraz edytować wcześniej zamieszczone przepisy. 
